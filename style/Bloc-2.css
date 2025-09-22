@@ -1,0 +1,225 @@
+.project {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 80px 50px;
+    flex-direction: column;
+}
+
+.project-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 52px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.project-head-text {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: -2%;
+}
+
+
+
+
+
+.project-body {
+    display: flex;
+    flex-direction: row;
+    gap: 28px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: 20px;
+}
+
+.project-body::-webkit-scrollbar {
+    display: none;
+}
+
+.project-card {
+    padding: 16px;
+    border-radius: 16px;
+    max-width: 428px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url(../public/1-card.svg);
+
+    height: 300px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.project-card:nth-child(2) {
+    background-image: url(../public/2-card.svg);
+}
+
+.project-card:nth-child(3) {
+    background-image: url(../public/3-card.svg);
+}
+
+.project-card:nth-child(4) {
+    background-image: url(../public/4-card.svg);
+}
+
+.project-card:nth-child(5) {
+    background-image: url(../public/5-card.svg);
+}
+
+.project-card:nth-child(6) {
+    background-image: url(../public/6-card.svg);
+}
+
+.project-card:nth-child(7) {
+    background-image: none;
+    background-color: rgb(235, 235, 235);
+    font-size: 17px;
+    justify-content: center;
+    display: flex;
+    color: rgba(220, 62, 72, 1);
+    font-weight: 600;
+}
+
+.project-card:nth-child(8) {
+    background-image: none;
+    background-color: rgb(235, 235, 235);
+    font-size: 17px;
+    justify-content: center;
+    display: flex;
+    color: rgba(220, 62, 72, 1);
+    font-weight: 600;
+}
+
+.project-card:nth-child(9) {
+    background-image: none;
+    background-color: rgb(235, 235, 235);
+    font-size: 17px;
+    justify-content: center;
+    display: flex;
+    color: rgba(220, 62, 72, 1);
+    font-weight: 600;
+}
+
+.project-title {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -2%;
+    color: rgba(255, 255, 255, 1);
+}
+
+.project-card-down {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+}
+
+.project-text {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -2%;
+    color: rgba(255, 255, 255, 1);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    max-height: 48px;
+    cursor: pointer;
+}
+
+.project-text.expanded {
+    display: block;
+    max-height: 1000px;
+    opacity: 1;
+}
+
+.project-body-button {
+    background: transparent;
+    padding: 10px 24px;
+    border: 1px solid rgba(255, 255, 255, 1);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    max-width: 132px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.project-body-button p {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 160%;
+    letter-spacing: -2%;
+    color: rgba(255, 255, 255, 1);
+}
+
+@media screen and (max-width: 768px) {
+    .project {
+        padding: 40px 20px;
+    }
+
+    .project-head-text {
+        font-size: 32px;
+    }
+
+    
+
+    .project-body {
+        gap: 20px;
+        padding: 0 10px 20px;
+    }
+
+    .project-title {
+        font-size: 18px;
+    }
+
+    .project-text {
+        font-size: 16px;
+        max-height: 38px;
+    }
+
+    .project-text.expanded {
+        max-height: 1000px;
+    }
+
+    .project-body-button {
+        padding: 8px 20px;
+    }
+
+    .project-body-button p {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .project {
+        padding: 20px 10px;
+    }
+
+    .project-head-text {
+        font-size: 24px;
+    }
+
+    .project-card {
+        min-width: calc(100vw - 20px);
+        max-width: calc(100vw - 20px);
+        margin: 0 5px;
+    }
+
+    .project-body {
+        gap: 15px;
+        padding: 0 5px 15px;
+    }
+}

@@ -1,0 +1,22 @@
+@import url(./Bloc-2.css);
+
+.project{
+    width: 100%;
+    padding: 80px 20px;
+    display: flex;
+}
+.project-head{
+    flex-wrap: nowrap;
+    display: inline-flex;
+    gap: 40px;
+    justify-content: flex-start;
+}
+.project-head-text{
+    min-width: 380px;
+}
+.project-container_1{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    gap: 30px;
+}

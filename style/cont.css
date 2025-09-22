@@ -1,0 +1,132 @@
+
+
+.Cont{
+    width: 100%;
+    height: auto;
+    padding: 0 30px 0 30px;
+    display: flex;
+    margin-bottom: 50px;
+    flex-direction: column;
+    position: relative;
+}
+.project-head{
+    width: 100%;
+    align-items: center;
+}
+.Project-body{
+    position: relative;
+    display: flex;
+    gap: 20px;
+    padding: 20px 20px 20px 20px;
+    width: 100%;
+    border: 2px solid #DC3E48;
+    border-radius: 10px;
+    height: auto;
+}
+.project-head{
+    margin-bottom: 15px;
+}
+
+li{
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    gap: 10px;
+}
+.text p{
+    font-size: 18px;
+    font-weight: 500;
+    color: #DC3E48;
+}
+.text img{
+    width: 25px;
+    height: 25px;
+}
+.project-card-m{
+    flex-direction: column;
+    display: flex;
+    position: relative;
+    width: 100%;
+    min-width: 0; /* Позволяет элементу сжиматься */
+    overflow: hidden; /* Скрывает содержимое, выходящее за границы */
+}
+.text{
+    flex-direction: column;
+    gap: 10px;
+    display:flex;
+    max-width: 460px;
+}
+
+.ymaps-2-1-79-gototech{
+    display: none;
+}
+.project-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.project-card-down {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.ymaps-2-1-79-gototech{
+    display: none;
+}
+.ymaps-2-1-79-gotoymaps{
+    width: 150px;
+    height: 35px !important;
+    margin-bottom: 20px;
+}
+
+#map {
+    border-radius: 12px !important;
+    max-width: 100%;
+    width: 100%;
+    min-height: 200px;
+    max-height: 600px;
+}
+
+/* Адаптивные стили для карты */
+@media (max-width: 1500px) {
+    .Project-body {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    #map {
+        height: 500px !important;
+    }
+    
+    .project-card-m {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .Cont {
+        padding: 0 15px 0 15px;
+    }
+    
+    .Project-body {
+        padding: 15px;
+        gap: 10px;
+    }
+    
+    #map {
+        height: 250px !important;
+        max-height: 250px;
+    }
+    
+    .text p {
+        font-size: 16px; /* Уменьшенный размер шрифта для мобильных */
+        line-height: 1.3;
+    }
+    
+    .text li {
+        gap: 8px; /* Уменьшенный отступ между иконкой и текстом */
+    }
+}
+

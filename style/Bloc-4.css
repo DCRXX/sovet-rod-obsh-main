@@ -1,0 +1,419 @@
+
+
+.test {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 28px;
+    padding: 80px 50px;
+}
+
+.red-plash {
+    width: 100%;
+    max-width: 326px;
+    min-height: 391px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    background-color: rgba(220, 62, 72, 1);
+    justify-content: space-between;
+    padding: 16px;
+    gap: 16px;
+}
+
+.red-plash-1 {
+    width: 100%;
+    max-width: 981px;
+    min-height: 391px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    background-color: rgba(220, 62, 72, 1);
+    justify-content: space-between;
+    padding: 16px;
+    gap: 16px;
+}
+
+.text-1-1,
+.text-1-1-2 {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -2%;
+    vertical-align: middle;
+    color: rgba(255, 255, 255, 1);
+}
+
+.text-1-2 {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -2%;
+    vertical-align: middle;
+    color: rgba(255, 255, 255, 1);
+}
+
+.text-1-2-2 {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -2%;
+    vertical-align: middle;
+    color: rgba(255, 255, 255, 1);
+}
+
+.polaya {
+    font-size: 14px;
+    resize: none;
+    color: rgb(56, 56, 56) !important;
+    width: 294px;
+    min-height: 42px;
+    display: flex;
+    border-radius: 16px;
+    padding: 10px 16px;
+    gap: 10px;
+    border: none;
+    outline: none;
+}
+
+.red-plash .polaya:nth-child(5) {
+    min-height: 84px;
+}
+
+.polaya-1 {
+    resize: none;
+    width: 954px;
+    min-height: 226px;
+    display: flex;
+    border-radius: 16px;
+    padding: 10px 16px;
+    gap: 10px;
+    color: rgb(56, 56, 56) !important;
+    border: none;
+    outline: none;
+}
+
+::placeholder, .polaya, .polaya-1 {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 160%;
+    letter-spacing: -2%;
+    color: rgba(140, 140, 140, 1);
+    text-align: start;
+}
+
+.button-1 {
+    width: 294px;
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 1);
+    border-radius: 50px;
+    padding: 10px 24px;
+    gap: 10px;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.button-1-2:hover,
+.button-1:hover {
+    background-color: white;
+}
+.button-1-2:hover p,
+.button-1:hover p {
+    color: rgba(220, 62, 72, 1);
+}
+
+.button-1-2 {
+    width: 954px;
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 1);
+    border-radius: 50px;
+    padding: 10px 24px;
+    gap: 10px;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.button-1 p,
+.button-1-2 p {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 160%;
+    letter-spacing: -2%;
+    color: rgba(255, 255, 255, 1);
+    text-decoration: none;
+}
+
+
+
+
+
+/* Медиа-запрос для экранов с высоким разрешением (1200px и выше) */
+@media (min-width: 1200px) {
+    .red-plash {
+        max-width: 400px;
+        min-height: 450px;
+    }
+
+    .red-plash-1 {
+        min-height: 470px;
+    }
+
+
+    .polaya {
+        width: 360px;
+        min-height: 48px;
+    }
+
+    .red-plash .polaya:nth-child(5) {
+        min-height: 96px;
+    }
+
+    .polaya-1 {
+        min-height: 260px;
+    }
+
+    .button-1 {
+        width: 360px;
+        min-height: 48px;
+    }
+
+    .blue-plash .button-1 {
+        width: 1560px;
+        min-height: 48px;
+    }
+
+    .button-1-2 {
+        min-height: 48px;
+    }
+
+    .text-1-1,
+    .text-1-1-2 {
+        font-size: 32px;
+    }
+
+    .text-1-2 {
+        font-size: 15px;
+    }
+
+    .text-1-2-2 {
+        font-size: 16px;
+    }
+}
+
+/* Медиа-запрос для iPad Pro (1024px–1366px) */
+@media (max-width: 1466px) and (min-width: 992px) {
+    .test {
+        flex-wrap: nowrap;
+        padding: 60px 30px;
+        gap: 20px;
+    }
+
+    .red-plash {
+        max-width: 280px;
+        min-height: 510px;
+    }
+
+    .red-plash-1 {
+        max-width: 980px;
+        min-height: 510px;
+    }
+
+    .blue-plash {
+        max-width: 1288px;
+        min-height: 350px;
+        background-size: cover;
+    }
+
+    .polaya {
+        width: 100%;
+        min-height: 40px;
+    }
+
+    .red-plash .polaya:nth-child(5) {
+        min-height: 80px;
+    }
+
+    .polaya-1 {
+        width: 100%;
+        min-height: 300px;
+    }
+
+    .button-1 {
+        width: 100%;
+        min-height: 40px;
+    }
+
+    .blue-plash .button-1 {
+        width: 100%;
+        min-height: 40px;
+    }
+
+    .button-1-2 {
+        width: 100%;
+        min-height: 40px;
+    }
+
+    .blue-plash-container {
+        padding: 0 30px;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+}
+
+/* Медиа-запрос для планшетов (768px–991px) */
+@media (max-width: 991px) {
+    .test {
+        padding: 40px 20px;
+        gap: 32px;
+        flex-wrap: wrap;
+    }
+
+    .red-plash {
+        max-width: 300px;
+        min-height: 350px;
+    }
+
+    .red-plash-1 {
+        max-width: 600px;
+        min-height: 350px;
+    }
+
+    .blue-plash {
+        max-width: 600px;
+        min-height: 350px;
+        background-size: cover;
+    }
+
+    .polaya {
+        width: 100%;
+        min-height: 40px;
+    }
+
+    .red-plash .polaya:nth-child(5) {
+        min-height: 80px;
+    }
+
+    .polaya-1 {
+        width: 100%;
+        min-height: 200px;
+    }
+
+    .button-1 {
+        width: 100%;
+        min-height: 40px;
+    }
+
+    .blue-plash .button-1 {
+        width: 100%;
+        min-height: 40px;
+    }
+
+    .button-1-2 {
+        width: 100%;
+        min-height: 40px;
+    }
+
+    .blue-plash-container {
+        padding: 0 20px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+}
+
+/* Медиа-запрос для телефонов (до 767px) */
+@media (max-width: 767px) {
+    .test {
+        padding: 20px 10px;
+        gap: 20px;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .red-plash {
+        max-width: 100%;
+        min-height: 300px;
+    }
+
+    .red-plash-1 {
+        max-width: 100%;
+        min-height: 300px;
+    }
+
+    .blue-plash {
+        max-width: 100%;
+        min-height: 300px;
+        background-size: cover;
+    }
+
+    .polaya {
+        width: 100%;
+        min-height: 36px;
+    }
+
+    .red-plash .polaya:nth-child(5) {
+        min-height: 72px;
+    }
+
+    .polaya-1 {
+        width: 100%;
+        min-height: 180px;
+    }
+
+    .button-1 {
+        width: 100%;
+        min-height: 36px;
+    }
+
+    .button-1:hover {
+        background-color: white;
+    }
+
+    .button-1:hover p {
+        color: rgba(220, 62, 72, 1);
+    }
+
+    .blue-plash .button-1 {
+        width: 100%;
+        min-height: 36px;
+    }
+
+    .blue-plash .button-1:hover {
+        background-color: white;
+    }
+
+    .blue-plash .button-1:hover p {
+        color: rgba(220, 62, 72, 1);
+    }
+
+    .button-1-2 {
+        width: 100%;
+        min-height: 36px;
+    }
+
+    .text-1-1,
+    .text-1-1-2 {
+        font-size: 24px;
+    }
+
+    .text-1-2 {
+        font-size: 12px;
+    }
+
+    .text-1-2-2 {
+        font-size: 12px;
+    }
+
+    .blue-plash-container {
+        padding: 0 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}

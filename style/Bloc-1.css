@@ -1,0 +1,121 @@
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.carousel-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    position: relative;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 1440 / 450;
+    object-fit: cover;
+    margin: 0;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.text-block1 {
+    position: absolute;
+    width: 42.75vw;
+    height: auto;
+    top: 18.4028vw;
+    left: 9.9028vw;
+    font-size: 2.54vw;
+    font-weight: 700;
+    line-height: 105%;
+    letter-spacing: -2%;
+    color: #FFFFFF;
+}
+
+.text-block2 {
+    position: absolute;
+    width: 31.4583vw;
+    height: auto;
+    top: 24.675vw;
+    left: 9.9028vw;
+    font-size: 0.9555vw;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -2%;
+    color: #FFFFFF;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5.9722vw;
+    height: 5.9722vw;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-btn img.arrow-icon {
+    width: 1.1111vw;
+    height: 1.9444vw;
+    stroke: #DC3E48;
+}
+
+.prev-btn {
+    left: 0.9028vw;
+}
+
+.next-btn {
+    right: 0.9028vw;
+}
+
+.dots-container {
+    position: absolute;
+    bottom: 3.1181vw;
+    right: 10.8688vw;
+    display: flex;
+    justify-content: space-between;
+    width: 7.1299vw;
+    height: 0.8389vw;
+    align-items: center;
+}
+
+.dot {
+    width: 0.6993vw;
+    height: 0.6993vw;
+    border-radius: 50%;
+    background-color: rgba(238, 144, 152, 0.5);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.dot.active {
+    width: 0.8389vw;
+    height: 0.8389vw;
+    background-color: #DC3E48;
+}
+

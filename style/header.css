@@ -1,0 +1,340 @@
+.header {
+    width: 100%;
+    padding: 14px 44px;
+    background-color: #F8F8F8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icons {
+    user-select: none; 
+    -webkit-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    display: flex;
+    gap: 8px;
+}
+
+.contact {
+    user-select: none; 
+    -webkit-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 160%;
+    letter-spacing: -3%;
+    text-align: right;
+    vertical-align: middle;
+    color: rgba(0, 0, 0, 1);
+    white-space: nowrap;
+}
+
+.contact a,
+.contact .phone {
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-thickness: 1px;
+    color: rgba(0, 0, 0, 1);
+    cursor: pointer;
+}
+
+/* Стили для уведомления */
+.notification {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    z-index: 1000;
+    opacity: 0;
+}
+
+.notification.show {
+    display: block;
+    animation: slideIn 0.3s ease-out forwards;
+}
+
+.notification.hide {
+    animation: slideOut 0.3s ease-in forwards;
+}
+.header-second {
+    position: relative;
+    width: 100%;
+    padding: 16px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    transition: justify-content 0.2s;
+}
+
+.header-second.align-left {
+  justify-content: flex-start !important;
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.nav-button {
+
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: -2%;
+    color: rgba(47, 43, 54, 1);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    gap: 10px;
+    justify-content:space-between;
+}
+
+.arrow-down {
+    width: 10px;
+    height: 22px;
+}
+
+ .nav-button img.arrow-down{
+    width: 12px;
+    height: 5px;
+ }
+
+
+.search-button {
+    width: 18px;
+    height: 18px;
+}
+
+.search-button img.search-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.Pois{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.vod{
+    align-items: center;
+    display: inline-flex;
+    position: relative;
+    width: 100%;
+    padding: 0 50px 0 200px;
+}
+.vod button{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3px;
+    width: 20px;
+    color: #DC3E48;
+    height: 20px;
+}
+.tex{
+    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+    max-width: 800px;
+    resize: none;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    padding: 3px 0 0 10px;
+    align-items: center;
+    width: 100%;
+    border: none;
+    height: 30px;
+    border: 2px solid #DC3E48;
+    outline: none;
+    border-radius: 10px;
+}
+
+
+
+/* Адаптивность для очень больших экранов */
+@media (min-width: 1440px) {
+
+    .icons img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .contact {
+        font-size: 16px;
+    }
+
+    .search-button img.search-icon {
+        width: 22px;
+        height: 22px;
+    }
+
+}
+
+/* Адаптивность для планшетов */
+@media (min-width: 768px) and (max-width: 1199px) {
+
+    .icons img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .contact {
+        font-size: 12px;
+    }
+
+    .logo {
+        width: 250px;
+        height: 32px;
+    }
+    
+    .nav-buttons {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .nav-button {
+        font-size: 12px;
+        white-space: normal;
+        line-height: 1.2;
+    }
+
+    .nav-button img.arrow-down {
+        width: 8px;
+        height: 3px;
+    }
+
+    .search-button {
+        width: 16px;
+        height: 16px;
+    }
+
+    .search-button img.search-icon {
+        width: 16px;
+        height: 16px;
+    }
+
+
+}
+@media (max-width: 810px){
+    .vod{
+        padding: 0 0 0 50px;
+    }
+}
+@media (max-width: 600px){
+    .vod{
+        padding: 0 0 0 0;
+    }
+}
+/* Адаптивность для мобильных устройств */
+@media (max-width: 767px) {
+
+    .icons img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .contact {
+        font-size: 10px;
+    }
+
+    .logo {
+        width: 200px;
+        height: 26px;
+        align-self: flex-start;
+        margin-left: 0;
+    }
+
+    .nav-buttons {
+        margin-left: 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-button {
+        font-size: 11px;
+        text-align: center;
+    }
+
+    .nav-button img.arrow-down {
+        width: 6px;
+        height: 2px;
+        margin-left: 4px;
+    }
+
+    .search-button {
+        width: 18px;
+        height: 18px;
+        margin-top: 0;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+    }
+
+    .search-button img.search-icon {
+        width: 18px;
+        height: 18px;
+        position: relative;
+    }
+
+    
+}
+
+/* Адаптивность для очень маленьких экранов */
+@media (max-width: 480px) {
+    :root {
+        --slide-scale: 0.44;
+        --slide-height: 200px;
+        --slide-width: 100%;
+        --text-scale: 0.44;
+        --arrow-scale: 0.47;
+    }
+
+
+    .header-second {
+        gap: 12px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .icons img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .contact {
+        font-size: 9px;
+    }
+
+    .logo {
+        position: relative;
+        width: 100px;
+        height: 23px;
+    }
+
+    .nav-button {
+        font-size: 10px;
+        padding: 4px 2px;
+    }
+
+  
+}

@@ -1,0 +1,119 @@
+.panel {
+    width: 100%;
+    display: flex;
+    padding: 20px 250px;
+    align-items: start;
+    justify-content: left;
+    gap: 70px;
+    min-height: 600px;
+}
+
+.panel-buts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    min-width: 292px;
+}
+
+.panel-but {
+    background: transparent;
+    border: none;
+    padding: 20px 5px;
+    border-top: 1px solid #DC3E48;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -3%;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.panel-but:hover {
+    background-color: #f8e1e3;
+}
+
+.panel-but.active {
+    background-color: #DC3E48;
+    color: white;
+}
+
+.panel-text section {
+    display: none;
+}
+
+.panel-text section.active {
+    display: block;
+}
+
+.cved {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cved h1 {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 110%;
+    letter-spacing: -2%;
+}
+
+.cved-text-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.cved-over {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -3%;
+    color: #2e2e2e;
+}
+
+.cved-text-3,
+.cved-text-a {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -1%;
+}
+
+.cved-time {
+    display: flex;
+    gap: 5px;
+    max-width: 400px;
+    justify-content: space-between;
+}
+
+.rasp-line {
+    width: 1px;
+    background-color: #b8b8b8;
+}
+
+.cved-text-a {
+    color: #DC3E48;
+}
+
+.cved-text-a:visited {
+  color: rgb(133, 133, 133);
+}
+
+.doc-all {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 5px;
+    align-items: left;
+    gap: 15px;
+}
+
+.doc-one {
+    display: flex;
+    gap: 10px;
+}
+
+.doc-one img{
+    width: 25px;
+}
