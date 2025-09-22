@@ -26,14 +26,13 @@ function toggleText(textElement) {
         textElement.textContent = textElement.getAttribute('data-full-text');
     }
 }
-
 // ========================================
 // БЛОК 4 - ГОРИЗОНТАЛЬНАЯ ПРОКРУТКА (Bloc-4.css)
 // Относится к: index.html - блок .KAR-NOV
 // ========================================
 
 document.addEventListener('DOMContentLoaded', () => {
-    const karNov = document.querySelector('.KAR-NOV');
+    const karNov = document.querySelector('.KAR-NOV', '.project-body');
     if (karNov) {
         karNov.addEventListener('wheel', function(e) {
             e.preventDefault();
@@ -41,3 +40,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+

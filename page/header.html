@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../style/header.css">
 </head>
+
 <body>
     <section>
-        <div class="header">
+        <div class="header" id="header">
             <div class="icons">
                 <a href="https://vk.com/roditelmoscow" target="_blank">
                     <picture><img src="../public/Frame 2455.svg" alt="VK"></picture>
@@ -27,7 +29,7 @@
                     <img src="../public/logoms.svg" alt="Logo" class="logo">
                 </picture>
             </a>
-            <div class="nav-buttons" id="nav-buttons"> 
+            <div class="nav-buttons" id="nav-buttons">
                 <a href="org.html" class="nav-button">Об организации<picture class="arrow-down"><img
                             src="../public/butstrel.svg" alt="Arrow Down" class="arrow-down"></picture></a>
                 <a href="dop.html" class="nav-button">Родителям<picture class="arrow-down"><img
@@ -36,19 +38,42 @@
                             src="../public/butstrel.svg" alt="Arrow Down" class="arrow-down"></picture></a>
                 <a href="US.html" class="nav-button">Управляющим советам<picture class="arrow-down"><img
                             src="../public/butstrel.svg" alt="Arrow Down" class="arrow-down"></picture></a>
-                <a href="cont.html" class="nav-button">Контакты<picture class="arrow-down"><img
+                <a href="Cont.html" class="nav-button">Контакты<picture class="arrow-down"><img
                             src="../public/butstrel.svg" alt="Arrow Down" class="arrow-down"></picture></a>
                 <a href="Part.html" class="nav-button">Партнеры<picture class="arrow-down"><img
                             src="../public/butstrel.svg" alt="Arrow Down" class="arrow-down"></picture></a>
             </div>
-            <button class="Pois" id="search-button"><img src="../public/search.svg" alt="Search" class="search-icon"></button>
-            <div class="vod" id="search-input-container" style="display: none;">
-                <textarea class="tex" type="text" placeholder="Поиск..."></textarea>
-                <button id="close-search" style="margin-left:8px; background:none; border:none; font-size:20px; cursor:pointer;">✖</button>
+            <div class="icons">
+                <div class="hamburger">
+                    <img src="../public/menu.svg" alt="">
+                    <div class="hamburger-nav">
+                        <a href="org.html" class="nav-button">Об организации<picture class="arrow-down"><img
+                                    src="../public/butstrel.svg" alt="Arrow Down" class="arrow-down"></picture></a>
+                        <a href="dop.html" class="nav-button">Родителям<picture class="arrow-down"><img
+                                    src="../public/butstrel.svg" alt="Arrow Down" class="arrow-down"></picture></a>
+                        <a href="dop.html" class="nav-button">Образовательным организациям<picture class="arrow-down">
+                                <img src="../public/butstrel.svg" alt="Arrow Down" class="arrow-down"></picture></a>
+                        <a href="US.html" class="nav-button">Управляющим советам<picture class="arrow-down"><img
+                                    src="../public/butstrel.svg" alt="Arrow Down" class="arrow-down"></picture></a>
+                        <a href="Cont.html" class="nav-button">Контакты<picture class="arrow-down"><img
+                                    src="../public/butstrel.svg" alt="Arrow Down" class="arrow-down"></picture></a>
+                        <a href="Part.html" class="nav-button">Партнеры<picture class="arrow-down"><img
+                                    src="../public/butstrel.svg" alt="Arrow Down" class="arrow-down"></picture></a>
+                    </div>
+                </div>
+                <button class="Pois" id="search-button"><img src="../public/search.svg" alt="Search"
+                        class="search-icon"></button>
+                <div class="vod" id="search-input-container">
+                    <textarea class="tex" placeholder="Поиск..." rows="1"></textarea>
+                    <button id="close-search"><img src="../public/close.svg" alt=""></button>
+                </div>
             </div>
+
             <div class="notification" id="copyNotification">Номер скопирован</div>
         </div>
     </section>
     <script src="../scripts/script.js"></script>
+    <script src="../scripts/Header.js"></script>
 </body>
+
 </html>

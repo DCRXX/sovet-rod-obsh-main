@@ -8,19 +8,19 @@
 }
 
 .icons {
-    user-select: none; 
-    -webkit-user-select: none; 
-    -moz-user-select: none; 
-    -ms-user-select: none; 
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     display: flex;
     gap: 8px;
 }
 
 .contact {
-    user-select: none; 
-    -webkit-user-select: none; 
-    -moz-user-select: none; 
-    -ms-user-select: none; 
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     font-weight: 400;
     font-size: 14px;
     line-height: 160%;
@@ -66,19 +66,15 @@
 .notification.hide {
     animation: slideOut 0.3s ease-in forwards;
 }
+
 .header-second {
     position: relative;
     width: 100%;
     padding: 16px 40px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
     gap: 10px;
     transition: justify-content 0.2s;
-}
-
-.header-second.align-left {
-  justify-content: flex-start !important;
 }
 
 .nav-buttons {
@@ -100,7 +96,7 @@
     align-items: center;
     white-space: nowrap;
     gap: 10px;
-    justify-content:space-between;
+    justify-content: space-between;
 }
 
 .arrow-down {
@@ -108,10 +104,10 @@
     height: 22px;
 }
 
- .nav-button img.arrow-down{
+.nav-button img.arrow-down {
     width: 12px;
     height: 5px;
- }
+}
 
 
 .search-button {
@@ -124,32 +120,50 @@
     height: 18px;
 }
 
-.Pois{
+.Pois {
     background: none;
     border: none;
     cursor: pointer;
 }
-.vod{
+
+.icons {
+    display: flex;
+    justify-content: end;
     align-items: center;
-    display: inline-flex;
-    position: relative;
-    width: 100%;
-    padding: 0 50px 0 200px;
+    gap: 10px;
 }
-.vod button{
+
+.vod {
+    align-items: center;
+    justify-content: center;
+    display: none;
+    position: relative;
+    gap: 5px;
+    width: 100%;
+}
+
+.vod.active {
+    display: inline-flex; 
+}
+
+.vod button {
+    background:none; 
+    border:none; 
+    font-size:20px; 
+    cursor:pointer;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 3px;
     width: 20px;
-    color: #DC3E48;
+    color: #000000;
     height: 20px;
 }
-.tex{
+
+.tex {
     white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    overflow: hidden;
+    text-overflow: ellipsis;
     max-width: 800px;
     resize: none;
     font-size: 16px;
@@ -160,20 +174,72 @@
     width: 100%;
     border: none;
     height: 30px;
-    border: 2px solid #DC3E48;
+    border: 1px solid #000000;
     outline: none;
     border-radius: 10px;
 }
 
+.hamburger {
+    display: none;
+}
 
+.hamburger img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.hamburger img.active {
+    transform: rotate(90deg);
+}
+
+.hamburger-nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    min-width: 280px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    flex-direction: column;
+    gap: 0;
+}
+
+.hamburger-nav.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.hamburger-nav .nav-button {
+    padding: 12px 20px;
+    margin: 0;
+    border-bottom: 1px solid #f0f0f0;
+    justify-content: flex-start;
+    transition: background-color 0.2s ease;
+}
+
+.nav-button:hover {
+    background-color: #DC3E48;
+}
+
+.hamburger-nav .nav-button:last-child {
+    border-bottom: none;
+}
+
+.hamburger-nav .nav-button img.arrow-down {
+    margin-left: auto;
+}
 
 /* Адаптивность для очень больших экранов */
 @media (min-width: 1440px) {
 
-    .icons img {
-        width: 36px;
-        height: 36px;
-    }
 
     .contact {
         font-size: 16px;
@@ -189,10 +255,6 @@
 /* Адаптивность для планшетов */
 @media (min-width: 768px) and (max-width: 1199px) {
 
-    .icons img {
-        width: 28px;
-        height: 28px;
-    }
 
     .contact {
         font-size: 12px;
@@ -202,7 +264,7 @@
         width: 250px;
         height: 32px;
     }
-    
+
     .nav-buttons {
         flex-wrap: wrap;
         gap: 8px;
@@ -231,22 +293,25 @@
 
 
 }
-@media (max-width: 810px){
-    .vod{
+
+@media (max-width: 810px) {
+    .vod {
         padding: 0 0 0 50px;
     }
 }
-@media (max-width: 600px){
-    .vod{
+
+@media (max-width: 600px) {
+    .vod {
         padding: 0 0 0 0;
     }
 }
+
 /* Адаптивность для мобильных устройств */
 @media (max-width: 767px) {
 
     .icons img {
-        width: 20px;
-        height: 20px;
+        width: 22px;
+        height: 22px;
     }
 
     .contact {
@@ -296,7 +361,7 @@
         position: relative;
     }
 
-    
+
 }
 
 /* Адаптивность для очень маленьких экранов */
@@ -313,7 +378,7 @@
     .header-second {
         gap: 12px;
         display: flex;
-        flex-direction: column;
+
     }
 
     .icons img {
@@ -336,5 +401,51 @@
         padding: 4px 2px;
     }
 
-  
+
+}
+
+@media screen and (max-width: 1320px) {
+    .nav-buttons {
+        display: none;
+    }
+
+    .hamburger {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hamburger-nav {
+        min-width: 240px;
+        right: -20px;
+    }
+
+    .hamburger-nav .nav-button {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+}
+
+/* Адаптивность для планшетов */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .hamburger-nav {
+        min-width: 300px;
+    }
+}
+@media (max-width: 700px) {
+    .hamburger-nav {
+      left: 50% !important;
+      right: auto !important;
+      transform: translate(-50%, 10px) !important;
+
+    }
+  }
+@media (max-width: 767px) {
+    .header img{
+        width: 32px;
+        height: 32px;
+    }
 }
