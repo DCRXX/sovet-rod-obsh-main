@@ -225,9 +225,7 @@
     transition: background-color 0.2s ease;
 }
 
-.nav-button:hover {
-    background-color: #DC3E48;
-}
+
 
 .hamburger-nav .nav-button:last-child {
     border-bottom: none;
@@ -439,7 +437,7 @@
     .hamburger-nav {
       left: 50% !important;
       right: auto !important;
-      transform: translate(-50%, 10px) !important;
+      transform: translate(-80%, 10px) !important;
 
     }
   }

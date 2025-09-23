@@ -61,6 +61,9 @@ function includeHTML(id, url, callback) {
 // Загрузка хедера и футера на всех страницах
 includeHTML('header', '../page/header.html', () => {
     // Инициализация функций хедера после загрузки
+    if (typeof initHamburgerMenu === 'function') {
+        initHamburgerMenu();
+    }
     if (typeof initHeaderSearch === 'function') {
         initHeaderSearch();
     }

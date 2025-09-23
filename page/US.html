@@ -11,89 +11,214 @@
     <div id="header"></div>
     <section class="US">
         <div class="US-head">
-            <h1>Управляющим советам</h1>
+            <h1>Сопровождение Управляющих советов</h1>
+            <div class="spis">
+                <a href="#" data-spis="main">
+                    <div class="spis-item" id="spis-main">
+                        <p>Основная информация</p>
+                    </div>
+                </a>
+                <a href="#" data-spis="docs">
+                    <div class="spis-item" id="spis-docs">
+                        <p>Документы</p>
+                    </div>
+                </a>
+                <a href="#" data-spis="events">
+                    <div class="spis-item" id="spis-events">
+                        <p>Мероприятия</p>
+                    </div>
+                </a>
+                <a href="#" data-spis="apply">
+                    <div class="spis-item" id="spis-apply">
+                        <p>Подать заявку</p>
+                    </div>
+                </a>
+                <a href="#" data-spis="leaders">
+                    <div class="spis-item" id="spis-leaders">
+                        <p>Лидеры УС</p>
+                    </div>
+                </a>
+                <a href="#" data-spis="news">
+                    <div class="spis-item" id="spis-news">
+                        <p>Новости</p>
+                    </div>
+                </a>
+                <a href="#" data-spis="question">
+                    <div class="spis-item" id="spis-question">
+                        <p>Задать вопрос</p>
+                    </div>
+                </a>
+                <a href="#" data-spis="contacts">
+                    <div class="spis-item" id="spis-contacts">
+                        <p>Контакты</p>
+                    </div>
+                </a>
+            </div>
         </div>
         <div class="US-body">
-            <div class="US-body-1">
-                <div class="US-body-1-img">
-                    <p>фото</p>
+            <!-- Основная информация -->
+            <div class="us-content" data-content="main">
+                <div class="US-body-head">
+                    <h1>Что такое управляющий совет?</h1>
+                </div>
+                <div class="Bloc-1">
+                    <p>Управляющий совет — это<br> государственно-общественный орган<br> управления образовательной<br> организацией, в состав которого входят<br> родители, ученики или студенты, а также<br> педагоги и специалисты, которые могут<br> помочь в решении задач развития<br> образовательной организации.</p>
+                    <img src="../public/Rectangle 147(2).svg">
+                </div>
+                <div class="US-body-head">
+                    <h1>Направления деятельности совета</h1>
+                </div>
+                <div class="Bloc-2">
+                    <h1>Управляющий совет решает важные для учреждения вопросы:</h1>
+                    <li>Разрабатывает и утверждает правила внутреннего распорядка и внешнего вида учеников</li>
+                    <li>Согласовывает ремонт зданий и закупку необходимого оборудования</li>
+                    <li>Регулирует спорные вопросы и конфликты</li>
+                    <li>Проводит праздничные и другие мероприятия</li>
+                    <li>Организует участие образовательной организации в городских проектах</li>
                 </div>
             </div>
-            <div class="US-body-2">
-                <div class="US-body-text">
-                    <h1>Сопровождение Управляющих советов </h1>
-                    <p>текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст</p>
+
+            <!--Документы-->
+            <div class="us-content" data-content="docs" style="display:none">
+                <div class="US-body-head">
+                    <h1>Документы</h1>
                 </div>
-                <div class="tr"></div>
-                <div class="US-body-DOC">
-                    <li><img src="../public/file_open_24.svg">Документы</li>
-                    <li><img src="../public/file_open_24.svg">Документы</li>
-                    <li><img src="../public/file_open_24.svg">Документы</li>
+                <div class="Bloc-1">
+                    <p>Здесь будут документы.</p>
                 </div>
-                <div class="tr"></div>
-                <div class="lid">
+            </div>
+
+            <!--Мероприятия-->
+            <div class="us-content" data-content="events" style="display:none">
+                <div class="US-body-head">
+                    <h1>Календарь</h1>
+                </div>
+                <div class="Kalen">
+                    <div class="mes-g">
+                        <div class="mes">
+                            <div class="m">
+                                <p>Сентябрь</p>
+                                <img src="../public/butstrel.svg">
+                            </div>
+                        </div>
+                        <div class="g">
+                            <div class="n">
+                                <p>2025</p>
+                                <img src="../public/butstrel.svg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cisl">
+                        <div class="data"></div> 
+                    </div>
+                </div>
+                <div class="tabl">
+                    <div class="tab"></div>
+                    <div class="tab"></div>
+                    <div class="tab"></div>
+                    <div class="tab"></div>
+                    <div class="tab"></div>
+                </div>
+            </div>
+
+            <!--Подать заявку-->
+            <div class="us-content" data-content="apply" style="display:none">
+                <div class="form">
+                    <div class="head">
+                        <h1>Заявка на консультацию или вступление в Управляющий совет</h1>
+                    </div>
+                    <div class="form-body">
+                        <div class="type">
+                            <p>Тип заявки</p>
+                            <img src="..//public/butstrel.svg">
+                        </div>
+                        <input type="text" maxlength="100" placeholder="ФИО" class="FIO">
+                        <input type="text" maxlength="100" placeholder="+7 999 999 99 99" class="Nymber">
+                        <input type="text" maxlength="100" placeholder="Адрес электронной почты" class="GM">
+                        <textarea type="text" placeholder="Опишите ваш запрос или укажите дополнительную информацию" class="OP-Z"></textarea>
+                        <a href="" class="button-1"><p>Отправить</p></a>
+                    </div>
+                </div>
+            </div>
+
+            <!--Лидеры УС-->
+            <div class="us-content" data-content="leaders" style="display:none">
+                <div class="US-body-head">
                     <h1>Лидеры УС</h1>
                 </div>
-                <div class="spis">
-                    <li>Лидер 1</li>
-                    <li>Лидер 2</li>
-                    <li>Лидер 3</li>
-                    <li>Лидер 4</li>
-                    <li>Лидер 5</li>
-                    <li>Лидер 6</li>
+                <div class="Bloc-1">
+                    <p>Здесь будут лидеры УС.</p>
                 </div>
             </div>
-            <div class="US-body-3">
-                <div class="red-plash-1">
-                    <div class="text-plash-1-2">
-                        <h1 class="text-1-1-2">Задать вопрос</h1>
-                    </div>
-                    <textarea maxlength="300" placeholder="Текст сообщения" class="polaya-1"></textarea>
-                    <a href="" class="button-1-2"><p>Отправить</p></a>
+
+            <!--Новости-->
+            <div class="us-content" data-content="news" style="display:none">
+                <div class="US-body-head">
+                    <h1>Новости</h1>
                 </div>
-            </div>
-            <div class="US-body-4">
-                <div class="US-body-mer">
-                    <div class="US-body-mer-1">
-                        <p>Мероприятие</p>
+                <div class="nov-1">
+                    <div class="nov-img">
+                        <p>фото</p>
                     </div>
-                    <div class="US-body-mer-1">
-                        <p>Мероприятие</p>
-                    </div>
-                    <div class="US-body-mer-1">
-                        <p>Мероприятие</p>
+                    <div class="nov-text">
+                        <div class="text-head">
+                            <h1>Заголовок</h1>
+                            <h2>Подзаголовок</h2>
+                        </div>
+                        <p> текст текст текст текст текст текст текст текст  текст текст текст текст текст текст текст текст  текст текст текст текст текст текст текст текст  текст текст текст текст текст текст текст текст  текст текст текст текст текст текст текст текст</p>
                     </div>
                 </div>
-            </div>
-            <div class="US-body-5">
-                <div class="Nov">
-                    <p>Новости</p>
-                </div>
-                <div class="Nov">
-                    <p>Новости</p>
-                </div>
-                <div class="Nov">
-                    <p>Новости</p>
-                </div>
-                <div class="Nov">
-                    <p>Новости</p>
-                </div>
-                <div class="Nov">
-                    <p>Новости</p>
+                <div class="nov-1">
+                    <div class="nov-img">
+                        <p>фото</p>
+                    </div>
+                    <div class="nov-text">
+                        <div class="text-head">
+                            <h1>Заголовок</h1>
+                            <h2>Подзаголовок</h2>
+                        </div>
+                        <p> текст текст текст текст текст текст текст текст  текст текст текст текст текст текст текст текст  текст текст текст текст текст текст текст текст  текст текст текст текст текст текст текст текст  текст текст текст текст текст текст текст текст</p>
+                    </div>
                 </div>
             </div>
-            <div class="US-body-6">
-                <div class="B">Подать заявку</div>
-                <div class="cont">
-                    <p>+7 (495) 530-23-15</p>
-                    <p>mc@mc-ksr.mos.ru</p>
+            
+            <!--Задать вопрос-->
+            <div class="us-content" data-content="question" style="display:none">
+                <div class="US-body-head">
+                    <h1>Задать вопрос</h1>
+                </div>
+                <div class="Bloc-1">
+                    <p>Здесь будет форма для вопросов.</p>
                 </div>
             </div>
+
+            <!--Контакты-->
+            <div class="us-content" data-content="contacts" style="display:none">
+                <div class="US-body-head">
+                    <h1>Контакты</h1>
+                </div>
+                <div class="Bloc-1">
+                    <p>Здесь будут контакты.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Модалка выбора месяца -->
+        <div id="modal-month" class="modal-select" style="display:none;">
+          <div class="modal-content">
+            <div id="modal-month-list"></div>
+          </div>
+        </div>
+        <!-- Модалка выбора года -->
+        <div id="modal-year" class="modal-select" style="display:none;">
+          <div class="modal-content">
+            <div id="modal-year-list"></div>
+          </div>
         </div>
     </section>
     <div id="footer"></div>
     <script src="../scripts/Header.js"></script>
     <script src="../scripts/Footer.js"></script>
     <script src="../scripts/script.js"></script>
+    <script src="../scripts/US.js"></script>
 </body>
 </html>

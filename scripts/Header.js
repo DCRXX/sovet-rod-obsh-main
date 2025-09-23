@@ -8,6 +8,7 @@ function initHeaderSearch() {
   var navBtns = document.getElementById('nav-buttons');
   var searchInput = document.getElementById('search-input-container');
   var closeBtn = document.getElementById('close-search');
+  var humBtn = document.getElementById('hum');
   var headerSecond = document.querySelector('.header-second');
 
   // Проверяем, что все необходимые элементы найдены
@@ -38,6 +39,15 @@ function initHeaderSearch() {
           searchBtn.style.display = '';
           searchInput.style.display = 'none';
           searchField.value = ''; // Очищаем textarea
+          headerSecond.classList.remove('align-left');
+      });
+  }
+  if (humBtn) {
+      humBtn.addEventListener('click', function () {
+          navBtns.style.display = '';
+          searchBtn.style.display = '';
+          searchInput.style.display = 'none';
+          searchField.value = '';
           headerSecond.classList.remove('align-left');
       });
   }
@@ -99,4 +109,5 @@ function includeHTML(id, url, callback) {
           console.error('Ошибка загрузки HTML:', error);
       });
 }
-initHamburgerMenu();
+
+// Удален немедленный вызов initHamburgerMenu(); инициализируем из includeHTML колбэка
