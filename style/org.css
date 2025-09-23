@@ -1,7 +1,7 @@
 .panel {
     width: 100%;
     display: flex;
-    padding: 20px 250px;
+    padding: 20px 200px;
     align-items: start;
     justify-content: left;
     gap: 70px;
@@ -49,7 +49,7 @@
 .cved {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
 }
 
 .cved h1 {
@@ -98,7 +98,7 @@
 }
 
 .cved-text-a:visited {
-  color: rgb(133, 133, 133);
+    color: rgb(133, 133, 133);
 }
 
 .doc-all {
@@ -114,6 +114,599 @@
     gap: 10px;
 }
 
-.doc-one img{
+.doc-one img {
     width: 25px;
+}
+
+.all-plash {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 25px 5px 5px 5px;
+}
+
+.bord-plash {
+    border: 1.5px solid #DC3E48;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.one-plash {
+    background-image: url(../public/profie.svg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+    padding: 15px;
+    min-width: 200px;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    gap: 3px;
+}
+
+.one-plash p {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -3%;
+}
+
+.bord-plan {
+    border: 1px solid #DC3E48;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 25px;
+}
+
+.plan-text {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -3%;
+}
+
+.all-plan {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 15px;
+}
+
+.one-plan {
+    background-color: #DC3E48;
+    border-radius: 10px;
+    padding: 17px 27px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.one-plan:hover {
+    background-color: #db5861;
+}
+
+.one-plan p {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 110%;
+    letter-spacing: -2%;
+}
+
+.bord-vozm {
+    border: 1px solid #DC3E48;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.bord-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.vozm-text {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -3%;
+}
+
+.vozm-all {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.vozm-text-2 {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -3%;
+}
+
+.vozm-padval {
+    display: flex;
+    padding: 15px 0 0 0;
+    gap: 10px;
+}
+
+.otvec {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.prof {
+    width: 40px;
+    border-radius: 50%;
+    background-image: url(../public/profie.svg);
+    background-position: center;
+    background-size: 40px;
+}
+
+.otvec p {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -3%;
+}
+
+.podv-a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.podv-a a {
+    color: #DC3E48;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 110%;
+    letter-spacing: -2%;
+}
+@media screen and (max-width: 990px) {
+    .panel {
+        padding: 10px 45px;
+        gap: 20px;
+        min-height: 600px;
+    }
+
+    .panel-buts {
+        padding: 0px;
+        min-width: 206px;
+    }
+
+    .panel-but {
+        font-size: 16px;
+    }
+
+    .cved {
+        gap: 20px;
+    }
+
+    .cved h1 {
+        font-size: 28px;
+    }
+
+    .cved-text-2 {
+        gap: 5px;
+    }
+
+    .cved-over {
+        font-size: 18px;
+    }
+
+    .cved-text-3,
+    .cved-text-a {
+        font-size: 20px;
+    }
+
+    .cved-time {
+        gap: 5px;
+        max-width: 400px;
+    }
+
+    .doc-all {
+        padding: 15px 5px;
+        gap: 15px;
+    }
+
+    .doc-one {
+        gap: 10px;
+    }
+
+    .doc-one img {
+        width: 25px;
+    }
+
+    .all-plash {
+        gap: 20px;
+        padding: 15px 0 0 0;
+    }
+
+    .bord-plash {
+        border-radius: 20px;
+        padding: 4px;
+    }
+
+    .one-plash {
+        border-radius: 20px;
+        padding: 10px;
+        min-width: 140px;
+        min-height: 180px;
+        gap: 2px;
+    }
+
+    .one-plash p {
+        font-size: 16px;
+    }
+
+    .bord-plan {
+        border-radius: 20px;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .plan-text {
+        font-size: 20px;
+    }
+
+    .all-plan {
+        gap: 10px;
+    }
+
+    .one-plan {
+        border-radius: 10px;
+        padding: 13px 20px;
+    }
+
+    .one-plan p {
+        font-size: 16px;
+    }
+
+    .bord-vozm {
+        border-radius: 20px;
+        padding: 16px;
+        gap: 20px;
+    }
+
+    .vozm-text {
+        font-size: 20px;
+    }
+
+    .vozm-all {
+        gap: 10px;
+    }
+
+    .vozm-text-2 {
+        font-size: 18px;
+    }
+
+    .vozm-padval {
+        padding: 10px 0 0 0;
+        gap: 10px;
+    }
+
+    .prof {
+        width: 40px;
+    }
+
+    .otvec p {
+        font-size: 18px;
+    }
+
+    .podv-a {
+        gap: 20px;
+    }
+
+    .podv-a a {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .panel {
+        padding: 10px 15px;
+        gap: 20px;
+        min-height: 600px;
+    }
+
+    .panel-buts {
+        padding: 0px;
+        min-width: 206px;
+    }
+
+    .panel-but {
+        font-size: 14px;
+    }
+
+    .cved {
+        gap: 20px;
+    }
+
+    .cved h1 {
+        font-size: 27px;
+    }
+
+    .cved-text-2 {
+        gap: 5px;
+    }
+
+    .cved-over {
+        font-size: 16px;
+    }
+
+    .cved-text-3,
+    .cved-text-a {
+        font-size: 18px;
+    }
+
+    .cved-time {
+        gap: 5px;
+        max-width: 350px;
+    }
+
+    .doc-all {
+        padding: 15px 5px;
+        gap: 15px;
+    }
+
+    .doc-one {
+        gap: 10px;
+    }
+
+    .doc-one img {
+        width: 25px;
+    }
+
+    .all-plash {
+        gap: 20px;
+        padding: 15px 0 0 0;
+    }
+
+    .bord-plash {
+        border-radius: 20px;
+        padding: 4px;
+    }
+
+    .one-plash {
+        border-radius: 20px;
+        padding: 10px;
+        min-width: 140px;
+        min-height: 180px;
+        gap: 2px;
+    }
+
+    .one-plash p {
+        font-size: 16px;
+    }
+
+    .bord-plan {
+        border-radius: 20px;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .plan-text {
+        font-size: 20px;
+    }
+
+    .all-plan {
+        gap: 10px;
+    }
+
+    .one-plan {
+        border-radius: 10px;
+        padding: 13px 20px;
+    }
+
+    .one-plan p {
+        font-size: 16px;
+    }
+
+    .bord-vozm {
+        border-radius: 20px;
+        padding: 16px;
+        gap: 20px;
+    }
+
+    .vozm-text {
+        font-size: 20px;
+    }
+
+    .vozm-all {
+        gap: 10px;
+    }
+
+    .vozm-text-2 {
+        font-size: 18px;
+    }
+
+    .vozm-padval {
+        padding: 10px 0 0 0;
+        gap: 10px;
+    }
+
+    .prof {
+        width: 40px;
+    }
+
+    .otvec p {
+        font-size: 18px;
+    }
+
+    .podv-a {
+        gap: 20px;
+    }
+
+    .podv-a a {
+        font-size: 16px;
+    }
+}
+
+
+@media screen and (max-width: 575px) {
+    .panel {
+        flex-direction: column;
+        padding: 10px 20px;
+        gap: 20px;
+        min-height: 600px;
+    }
+
+    .panel-buts {
+        width: 100%;
+        padding: 7px;
+        min-width: 317px;
+    }
+
+    .panel-but {
+        font-size: 14px;
+    }
+
+    .cved {
+        gap: 15px;
+    }
+
+    .cved h1 {
+        font-size: 25px;
+    }
+
+    .cved-text-2 {
+        gap: 4px;
+    }
+
+    .cved-over {
+        font-size: 14px;
+    }
+
+    .cved-text-3,
+    .cved-text-a {
+        font-size: 16px;
+    }
+
+    .cved-time {
+        gap: 5px;
+        max-width: 350px;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .doc-all {
+        padding: 10px 5px;
+        gap: 30px;
+    }
+
+    .doc-one {
+        gap: 10px;
+        align-items: center;
+    }
+
+    .doc-one img {
+        width: 20px;
+    }
+
+    .all-plash {
+        gap: 20px;
+        padding: 15px 0 0 0;
+        justify-content: center;
+    }
+
+    .bord-plash {
+        border-radius: 20px;
+        padding: 5px;
+    }
+
+    .one-plash {
+        border-radius: 20px;
+        padding: 10px;
+        min-width: 130px;
+        min-height: 170px;
+        gap: 3px;
+        text-align: center;
+    }
+
+    .one-plash p {
+        font-size: 14px;
+    }
+
+    .bord-plan {
+        border-radius: 20px;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .plan-text {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .all-plan {
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .one-plan {
+        border-radius: 10px;
+        padding: 10px 17px;
+    }
+
+    .one-plan p {
+        font-size: 14px;
+    }
+
+    .bord-vozm {
+        border-radius: 20px;
+        padding: 12px;
+        gap: 20px;
+    }
+
+    .bord-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: start;
+    }
+
+    .vozm-text {
+        font-size: 18px;
+    }
+
+    .vozm-all {
+        gap: 5px;
+    }
+
+    .vozm-text-2 {
+        font-size: 16px;
+    }
+
+    .vozm-padval {
+        padding: 10px 0 0 0;
+        gap: 5px;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .prof {
+        width: 40px;
+    }
+
+    .otvec p {
+        font-size: 16px;
+    }
+
+    .podv-a {
+        gap: 10px;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .podv-a a {
+        font-size: 16px;
+    }
 }
