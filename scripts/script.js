@@ -68,6 +68,7 @@ includeHTML('header', '../page/header.html', () => {
         initHeaderSearch();
     }
 });
+
 includeHTML('footer', '../page/footer.html', () => {
     // Инициализация функций футера после загрузки
     if (typeof initUpButton === 'function') {

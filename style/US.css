@@ -19,8 +19,15 @@ p{
 .spis{
     display: flex;
     gap: 40px;
-    flex-wrap: wrap;
     justify-content: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    justify-content: flex-start;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
 
 }
 .us-content{
@@ -31,6 +38,7 @@ p{
 }
 
 .spis-item{
+    white-space: nowrap;
     display: flex;
     border: 2px solid #DC3E48;
     border-radius: 40px;
@@ -106,13 +114,13 @@ p{
     overflow: hidden;
     height: 100px;
     border-radius: 15px;
-    border: 1px solid #DC3E48;
+    border: 2px solid #DC3E48;
 }
 .mes-g img{
     width: 15px;
 }
 .mes-g{
-    border-bottom: 1px solid #DC3E48;
+    border-bottom: 2px solid #DC3E48;
     display: flex;
     font-weight: 600;
 }
@@ -125,7 +133,7 @@ p{
 }
 .g{
     padding: 5px 0 5px 10px;
-    border-left: 1px solid #DC3E48;
+    border-left: 2px solid #DC3E48;
     gap: 5px;
     width: 50%;
     justify-content: left;
@@ -154,7 +162,7 @@ p{
     font-weight: 600;
     color: #DC3E48;
     height: 100%;
-    border-right: 1px solid #DC3E48;
+    border-right: 2px solid #DC3E48;
     display: inline-flex;
     align-items: center;
     cursor: pointer;
@@ -173,7 +181,7 @@ p{
 .tabl{
     width: 100%;
     overflow: hidden;
-    border: 1px solid #DC3E48;
+    border: 2px solid #DC3E48;
     height: auto;
     align-items: stretch;
     border-radius: 15px;
@@ -182,7 +190,7 @@ p{
 }
 .tab{
     min-height: 100px;
-    border-bottom: 1px solid #DC3E48;
+    border-bottom: 2px solid #DC3E48;
     align-items: center;
     display: flex;
     padding: 0 0 0 20px;
@@ -452,6 +460,7 @@ textarea::placeholder{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
     padding: 8px 16px;
     background-color: #DC3E48;
     border-radius: 16px;

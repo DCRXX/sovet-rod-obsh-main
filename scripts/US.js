@@ -155,4 +155,16 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+
+    // Горизонтальный скролл колесом мыши для .spis при узком экране
+    const spis = document.querySelector('.spis');
+    const SPIS_SCROLL_SPEED = 2; // множитель скорости
+    if (spis) {
+        spis.addEventListener('wheel', function(e) {
+            if (window.innerWidth <= 1526 && e.deltaY !== 0) {
+                e.preventDefault();
+                spis.scrollLeft += e.deltaY * SPIS_SCROLL_SPEED;
+            }
+        }, { passive: false });
+    }
 });
