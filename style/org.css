@@ -1,52 +1,15 @@
-.panel {
-    width: 100%;
-    display: flex;
-    padding: 20px 200px;
-    align-items: start;
-    justify-content: left;
-    gap: 70px;
-    min-height: 600px;
-}
+@import url(./US.css);
 
-.panel-buts {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 10px;
-    min-width: 292px;
+main{
+    padding: 0 80px 0 80px;
 }
-
-.panel-but {
-    background: transparent;
-    border: none;
-    padding: 20px 5px;
-    border-top: 1px solid #DC3E48;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 120%;
-    letter-spacing: -3%;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.panel-but:hover {
-    background-color: #f8e1e3;
-}
-
-.panel-but.active {
-    background-color: #DC3E48;
-    color: white;
-}
-
-.panel-text section {
-    display: none;
-}
-
-.panel-text section.active {
-    display: block;
+.US-head{
+    padding: 20px 0 0 0;
+    gap: 0;
 }
 
 .cved {
+    padding: 40px 0 80px 0;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -112,6 +75,7 @@
 .doc-one {
     display: flex;
     gap: 10px;
+    align-items: center;
 }
 
 .doc-one img {

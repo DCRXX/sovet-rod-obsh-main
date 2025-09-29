@@ -1,0 +1,320 @@
+.glav-1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    padding: 16px 40px;
+}
+
+.glav-1 h1 {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 110%;
+    letter-spacing: -2%;
+}
+
+.all-glav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    padding: 10px;
+}
+
+.glav-2 {
+    min-height: 310px;
+    width: 32%;
+    background-image: url(../public/sovet.svg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+    padding: 20px 15px;
+    filter: brightness(95%);
+}
+
+.glav-2:hover {
+    filter: drop-shadow(4px);
+}
+
+.glav-2:nth-child(2) {
+    background-image: url(../public/conk.svg);
+    background-position: top;
+}
+
+.glav-2:nth-child(3) {
+    background-image: url(../public/sssssskk.svg);
+}
+
+.glav-2:nth-child(4) {
+    background-image: url(../public/temvstr.svg);
+}
+
+.glav-2:nth-child(5) {
+    background-image: url(../public/chto_takoe_uprav_sovet2.svg);
+    background-position: top;
+}
+
+.glav-2:nth-child(6) {
+    background-image: url(../public/prof-teach.svg);
+}
+
+.glav-plush {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.plush-1 {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -3%;
+    margin-bottom: 8px;
+}
+
+.but-glav {
+    border: 2px solid #fff;
+    border-radius: 25px;
+    padding: 10px 25px;
+    background-color: transparent;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.but-glav:hover {
+    background-color: #DC3E48;
+}
+
+.but-glav p {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -2%;
+    line-height: 160%;
+    color: rgb(255, 255, 255);
+}
+
+@media (max-width: 1850px) {
+    .glav-1 {
+        gap: 20px;
+        padding: 15px 20px;
+    }
+
+    .glav-1 h1 {
+        font-size: 36px;
+    }
+
+    .all-glav {
+        gap: 20px;
+        padding: 0px;
+    }
+
+    .glav-2 {
+        min-height: 400px;
+        width: 100%;
+        padding: 15px 20px;
+    }
+
+    .glav-plush {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        flex-direction: column;
+    }
+
+    .plush-1 {
+        font-size: 30px;
+        margin-bottom: 0px;
+    }
+
+    .but-glav {
+        border: 2px solid #fff;
+        padding: 10px 45px;
+    }
+
+    .but-glav p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1320px) {
+    .glav-1 {
+        gap: 20px;
+        padding: 15px 10px;
+    }
+
+    .glav-1 h1 {
+        font-size: 28px;
+    }
+
+    .all-glav {
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .glav-2 {
+        min-height: 220px;
+        width: 100%;
+        padding: 5px 10px;
+    }
+
+    .glav-plush {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        flex-direction: column;
+    }
+
+    .plush-1 {
+        font-size: 20px;
+        margin-bottom: 0px;
+    }
+
+    .but-glav {
+        border: 2px solid #fff;
+        padding: 10px 15px;
+    }
+
+    .but-glav p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 900px) {
+    .glav-1 {
+        gap: 20px;
+        padding: 15px 10px;
+    }
+
+    .glav-1 h1 {
+        font-size: 28px;
+    }
+
+    .all-glav {
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .glav-2 {
+        min-height: 220px;
+        width: 100%;
+        padding: 5px 10px;
+    }
+
+    .glav-plush {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        flex-direction: column;
+    }
+
+    .plush-1 {
+        font-size: 20px;
+        margin-bottom: 0px;
+    }
+
+    .but-glav {
+        border: 2px solid #fff;
+        padding: 10px 15px;
+    }
+
+    .but-glav p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 650px) {
+    .glav-1 {
+        gap: 20px;
+        padding: 15px 10px;
+    }
+
+    .glav-1 h1 {
+        font-size: 28px;
+    }
+
+    .all-glav {
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .glav-2 {
+        min-height: 220px;
+        width: 100%;
+        padding: 5px 10px;
+    }
+
+    .glav-plush {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        flex-direction: column;
+    }
+
+    .plush-1 {
+        font-size: 20px;
+        margin-bottom: 0px;
+    }
+
+    .but-glav {
+        border: 2px solid #fff;
+        padding: 10px 15px;
+    }
+
+    .but-glav p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 400px) {
+    .glav-1 {
+        gap: 20px;
+        padding: 15px 10px;
+    }
+
+    .glav-1 h1 {
+        font-size: 28px;
+    }
+
+    .all-glav {
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .glav-2 {
+        min-height: 220px;
+        width: 100%;
+        padding: 5px 10px;
+    }
+
+    .glav-plush {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        flex-direction: column;
+    }
+
+    .plush-1 {
+        font-size: 20px;
+        margin-bottom: 0px;
+    }
+
+    .but-glav {
+        border: 2px solid #fff;
+        padding: 10px 15px;
+    }
+
+    .but-glav p {
+        font-size: 13px;
+    }
+}

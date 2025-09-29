@@ -13,327 +13,419 @@
     <div id="header"></div>
 <main>
     <!-- Боковая панель -->
-    <section>
-        <div class="panel">
-            <div class="panel-buts">
-                <button class="panel-but active" data-target="basic-info">Основные сведения</button>
-                <button class="panel-but" data-target="documents">Документы</button>
-                <button class="panel-but" data-target="leadership">Руководство</button>
-                <button class="panel-but" data-target="work-plan">План работы</button>
-                <button class="panel-but" data-target="opportunities">Доставляемые возможности</button>
+    <div class="US-head">
+        <div class="US-head">
+            <div class="spis">
+                <a href="#" data-spis="main">
+                    <div class="spis-item" id="spis-main">
+                        <p>Основные сведения</p>
+                    </div>
+                </a>
+                <a href="#" data-spis="docs">
+                    <div class="spis-item" id="spis-docs">
+                        <p>Документация</p>
+                    </div>
+                </a>
+                <a href="#" data-spis="ruk">
+                    <div class="spis-item" id="spis-ruk">
+                        <p>Руководство</p>
+                    </div>
+                </a>
+                <a href="#" data-spis="plan">
+                    <div class="spis-item" id="spis-plan">
+                        <p>План работы</p>
+                    </div>
+                </a>
+                <a href="#" data-spis="dos">
+                    <div class="spis-item" id="spis-dos">
+                        <p>Доставляемые возможности</p>
+                    </div>
+                </a>
+            </div>  
+        </div>
+
+    <section class="active"  data-content="main">
+        <div class="cved">
+            <h1>Основные сведения</h1>
+            <div class="cved-text-2">
+                <p class="cved-over">Полное наименование образовательной организации</p>
+                <p class="cved-text-3">Государственное автономное учреждение города Москвы «Медиацентр»</p>
             </div>
-            <div class="panel-text">
-                <!-- Основные сведения -->
-                <section id="basic-info" class="active">
-                    <div class="cved">
-                        <h1>Основные сведения</h1>
-                        <div class="cved-text-2">
-                            <p class="cved-over">Полное наименование образовательной организации</p>
-                            <p class="cved-text-3">Государственное автономное учреждение города Москвы «Медиацентр»</p>
-                        </div>
-                        <div class="cved-text-2">
-                            <p class="cved-over">Сокращенное наименование организации</p>
-                            <p class="cved-text-3">ГАУ Медиацентр</p>
-                        </div>
-                        <div class="cved-text-2">
-                            <p class="cved-over">Дата создания образовательной организации</p>
-                            <p class="cved-text-3">12.03.2013</p>
-                        </div>
-                        <div class="cved-text-2">
-                            <p class="cved-over">Учредитель образовательной организации</p>
-                            <p class="cved-text-3">Комитет государственных услуг города Москвы</p>
-                        </div>
-                        <div class="cved-text-2">
-                            <p class="cved-over">Место нахождения образовательной организации</p>
-                            <p class="cved-text-3">107076, Москва, 1-й Зборовский переулок, д.3</p>
-                        </div>
-                        <div class="cved-text-2">
-                            <p class="cved-over">Режим и график работы</p>
-                            <div class="cved-time">
-                                <div class="cved-time-2">
-                                    <p class="cved-text-3">8:00 – 17:00</p>
-                                    <p class="cved-text-3">8:00 – 15:45</p>
-                                    <p class="cved-text-3">Выходные дни</p>
-                                </div>
-                                <div class="rasp-line"></div>
-                                <div class="cved-time-2">
-                                    <p class="cved-text-3">Понедельник – четверг</p>
-                                    <p class="cved-text-3">Пятница</p>
-                                    <p class="cved-text-3">Суббота, воскресенье</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cved-text-2">
-                            <p class="cved-over">Контактный телефон</p>
-                            <a href="tel:+74956202977" class="cved-text-a">+7 (495) 620-29-77</a>
-                        </div>
-                        <div class="cved-text-2">
-                            <p class="cved-over">Адрес электронной почты</p>
-                            <a href="mailto:uar@mos.ru" class="cved-text-a">uar@mos.ru</a>
+            <div class="cved-text-2">
+                <p class="cved-over">Сокращенное наименование организации</p>
+                <p class="cved-text-3">ГАУ Медиацентр</p>
+            </div>
+            <div class="cved-text-2">
+                <p class="cved-over">Дата создания образовательной организации</p>
+                <p class="cved-text-3">12.03.2013</p>
+            </div>
+            <div class="cved-text-2">
+                <p class="cved-over">Учредитель образовательной организации</p>
+                <p class="cved-text-3">Комитет государственных услуг города Москвы</p>
+            </div>
+            <div class="cved-text-2">
+                <p class="cved-over">Место нахождения образовательной организации</p>
+                <p class="cved-text-3">107076, Москва, 1-й Зборовский переулок, д.3</p>
+            </div>
+            <div class="cved-text-2">
+                <p class="cved-over">Режим и график работы</p>
+                <div class="cved-time">
+                    <div class="cved-time-2">
+                        <p class="cved-text-3">8:00 – 17:00</p>
+                        <p class="cved-text-3">8:00 – 15:45</p>
+                        <p class="cved-text-3">Выходные дни</p>
+                    </div>
+                    <div class="rasp-line"></div>
+                    <div class="cved-time-2">
+                        <p class="cved-text-3">Понедельник – четверг</p>
+                        <p class="cved-text-3">Пятница</p>
+                        <p class="cved-text-3">Суббота, воскресенье</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cved-text-2">
+                <p class="cved-over">Контактный телефон</p>
+                <a href="tel:+74956202977" class="cved-text-a">+7 (495) 620-29-77</a>
+            </div>
+            <div class="cved-text-2">
+                <p class="cved-over">Адрес электронной почты</p>
+                <a href="mailto:uar@mos.ru" class="cved-text-a">uar@mos.ru</a>
+            </div>
+        </div>
+    </section>
+    <!-- Документы -->
+    <section class="active" data-content="docs">
+        <div class="cved">
+            <h1>Документация</h1>
+            <div class="docs-copr-plash2">
+                <a href="../docs/5_svidetelstvo_registr.pdf">
+                    <div class="docs-copr-plash-3">
+                        <p>Свидетельство о
+                            государственной регистрации</p>
+                        <div class="after-img">
+                            <img src="../public/docs-2.svg" alt="">
                         </div>
                     </div>
-                </section>
-                <!-- Документы -->
-                <section id="documents">
-                    <div class="cved">
-                        <h1>Документация</h1>
-                        <div class="doc-all">
-                            <div class="doc-one">
-                                <img src="../public/file_open_24.svg" alt="">
-                                <a href="../docs/5_svidetelstvo_registr.pdf" target="_blank"
-                                    class="cved-text-a">Свидетельство о
-                                    государственной регистрации</a>
-                            </div>
-                            <div class="doc-one">
-                                <img src="../public/file_open_24.svg" alt="">
-                                <a href="../docs/Устав ГАУ Медиацентр.pdf" target="_blank" class="cved-text-a">Устав ГАУ
-                                    Медиацентр</a>
-                            </div>
-                            <div class="doc-one">
-                                <img src="../public/file_open_24.svg" alt="">
-                                <a href="../docs/6_svidetelstvo.pdf" target="_blank" class="cved-text-a">Свидетельство о
-                                    постановке на учет
-                                    российской организации в налоговом органе по месту её нахождения</a>
-                            </div>
-                            <div class="doc-one">
-                                <img src="../public/file_open_24.svg" alt="">
-                                <a href="../docs/prikaz_01-02-469_02.08.2024.pdf" target="_blank"
-                                    class="cved-text-a">Приказ о назначении
-                                    директора ГАУ Медиацентр</a>
-                            </div>
-                            <div class="doc-one">
-                                <img src="../public/file_open_24.svg" alt="">
-                                <a href="../docs/uchet_politika_2023.pdf" target="_blank" class="cved-text-a">Учетная
-                                    политика ГАУ
-                                    Медиацентр</a>
-                            </div>
-                            <div class="doc-one">
-                                <img src="../public/file_open_24.svg" alt="">
-                                <a href="../docs/Приказ о назначении членов Наблюдательного совета ГАУ Медиацентр.pdf"
-                                    target="_blank" class="cved-text-a">Приказ о назначении членов Наблюдательного
-                                    совета ГАУ Медиацентр</a>
-                            </div>
-                            <div class="doc-one">
-                                <img src="../public/file_open_24.svg" alt="">
-                                <a href="../docs/электронная_копия_государственного_задания.pdf" target="_blank"
-                                    class="cved-text-a">Информация
-                                    о государственном (муниципальном) задании и его исполнении</a>
-                            </div>
-                            <div class="doc-one">
-                                <img src="../public/file_open_24.svg" alt="">
-                                <a href="../docs/plan fin.pdf" target="_blank" class="cved-text-a">Информация о плане
-                                    финансово-хозяйственной
-                                    деятельности</a>
-                            </div>
-                            <div class="doc-one">
-                                <img src="../public/file_open_24.svg" alt="">
-                                <a href="../docs/report.pdf" target="_blank" class="cved-text-a">Информация об операциях
-                                    с целевыми средствами
-                                    из бюджета</a>
-                            </div>
-                            <div class="doc-one">
-                                <img src="../public/file_open_24.svg" alt="">
-                                <a href="../docs/otchet o fin rez deyatelnosty.pdf" target="_blank"
-                                    class="cved-text-a">Отчет о финансовых
-                                    результатах деятельности учреждения</a>
-                            </div>
-                            <div class="doc-one">
-                                <img src="../public/file_open_24.svg" alt="">
-                                <a href="../docs/12753859_0503730G_2024+год.pdf" target="_blank"
-                                    class="cved-text-a">Баланс государственного
-                                    (муниципального) учреждения</a>
-                            </div>
-                            <div class="doc-one">
-                                <img src="../public/file_open_24.svg" alt="">
-                                <a href="../docs/12385545_0503737G_2024+год.pdf" target="_blank"
-                                    class="cved-text-a">Отчет об исполнении
-                                    учреждением плана его финансово-хозяйственной деятельности</a>
-                            </div>
-                            <div class="doc-one">
-                                <img src="../public/file_open_24.svg" alt="">
-                                <a href="../docs/отчет+за+2024.pdf" target="_blank" class="cved-text-a">Информация о
-                                    результатах деятельности и
-                                    об использовании имущества</a>
-                            </div>
-                            <div class="doc-one">
-                                <img src="../public/file_open_24.svg" alt="">
-                                <a href="../docs/Профилактическое+мероприятие+ГУ+МЧС+от+04.07.2024.pdf" target="_blank"
-                                    class="cved-text-a">Сведения о контрольных мероприятиях и их результатах</a>
-                            </div>
-                            <div class="doc-one">
-                                <img src="../public/file_open_24.svg" alt="">
-                                <a href="../docs/Карточка организации.pdf" target="_blank" class="cved-text-a">Карточка
-                                    организации ГАУ
-                                    Медиацентр</a>
-                            </div>
-                            <div class="doc-one">
-                                <img src="../public/file_open_24.svg" alt="">
-                                <a href="../docs/polozhenie-o-sisteme-oplaty-truda-rabotnikov-gau-mediaczentr.pdf"
-                                    target="_blank" class="cved-text-a">Положение о системе оплаты труда работников ГАУ
-                                    Медиацентр</a>
-                            </div>
-                            <div class="doc-one">
-                                <img src="../public/file_open_24.svg" alt="">
-                                <a href="../docs/perechen_meropriyatij_gau_mediaczentr_2023.pdf" target="_blank"
-                                    class="cved-text-a">Перечень
-                                    рекомендуемых мероприятий по улучшению условий труда</a>
-                            </div>
-                            <div class="doc-one">
-                                <img src="../public/file_open_24.svg" alt="">
-                                <a href="../docs/sout_2023.pdf" target="_blank" class="cved-text-a">Сводная ведомость
-                                    результатов проведения
-                                    специальной оценки условий труда</a>
-                            </div>
-                            <div class="doc-one">
-                                <img src="../public/file_open_24.svg" alt="">
-                                <a href="../docs/polozhenie_o_poryadke_okazaniya_platnyh_uslug.pdf" target="_blank"
-                                    class="cved-text-a">Положение о порядке оказания платных услуг физическим и
-                                    юридическим
-                                    лицам, учете и распределении средств от оказания платных услуг ГАУ Медиацентр</a>
-                            </div>
-                            <div class="doc-one">
-                                <img src="../public/file_open_24.svg" alt="">
-                                <a href="../docs/prejskurant.pdf" target="_blank" class="cved-text-a">Прейскурант на
-                                    платные услуги (работы)
-                                    ГАУ Медиацентр</a>
-                            </div>
-                            <div class="doc-one">
-                                <img src="../public/file_open_24.svg" alt="">
-                                <a href="../docs/prikaz_PR-LN-58_15.10.2021.pdf" target="_blank"
-                                    class="cved-text-a">Приказ об утверждении
-                                    перечня товаров, работ, услуг, закупаемых у субъектов малого и среднего
-                                    предпринимательства от 15.10.2021 № ПР-ЛН-58/21</a>
-                            </div>
-                            <div class="doc-one">
-                                <img src="../public/file_open_24.svg" alt="">
-                                <a href="../docs/prikaz_PR-LN-96_28.05.2024.pdf" target="_blank"
-                                    class="cved-text-a">Приказ от 28.05.2024 №
-                                    ПР-ЛН-96/24 "О внесении изменений в приложение к приказу ГАУ Медиацентр от
-                                    15.10.2021 № ПР-ЛН-58/21"</a>
+                </a>
+                <a href="../docs/Устав ГАУ Медиацентр.pdf">
+                    <div class="docs-copr-plash-3">
+                        <p>Устав ГАУ
+                            Медиацентр</p>
+                        <div class="after-img">
+                            <img src="../public/docs-2.svg" alt="">
+                        </div>
+                    </div>
+                </a>
+                <a href="../docs/6_svidetelstvo.pdf">
+                    <div class="docs-copr-plash-3">
+                        <p>Свидетельство о
+                            постановке на учет
+                            российской организации в налоговом органе по месту её нахождения</p>
+                        <div class="after-img">
+                            <img src="../public/docs-2.svg" alt="">
+                        </div>
+                    </div>
+                </a>
+                <a href="../docs/prikaz_01-02-469_02.08.2024.pdf">
+                    <div class="docs-copr-plash-3">
+                        <p>Приказ о назначении
+                            директора ГАУ Медиацентр</p>
+                        <div class="after-img">
+                            <img src="../public/docs-2.svg" alt="">
+                        </div>
+                    </div>
+                </a>
+                <a href="../docs/uchet_politika_2023.pdf">
+                    <div class="docs-copr-plash-3">
+                        <p>Учетная
+                            политика ГАУ
+                            Медиацентр</p>
+                        <div class="after-img">
+                            <img src="../public/docs-2.svg" alt="">
+                        </div>
+                    </div>
+                </a>
+                <a href="../docs/Приказ о назначении членов Наблюдательного совета ГАУ Медиацентр.pdf">
+                    <div class="docs-copr-plash-3">
+                        <p>Приказ о назначении членов Наблюдательного
+                            совета ГАУ Медиацентр</p>
+                        <div class="after-img">
+                            <img src="../public/docs-2.svg" alt="">
+                        </div>
+                    </div>
+                </a>
+                <a href="../docs/электронная_копия_государственного_задания.pdf">
+                    <div class="docs-copr-plash-3">
+                        <p>Информация
+                            о государственном (муниципальном) задании и его исполнении</p>
+                        <div class="after-img">
+                            <img src="../public/docs-2.svg" alt="">
+                        </div>
+                    </div>
+                </a>
+                <a href="../docs/plan fin.pdf">
+                    <div class="docs-copr-plash-3">
+                        <p>Информация о плане
+                            финансово-хозяйственной
+                            деятельности</p>
+                        <div class="after-img">
+                            <img src="../public/docs-2.svg" alt="">
+                        </div>
+                    </div>
+                </a>
+                <a href="../docs/report.pdf">
+                    <div class="docs-copr-plash-3">
+                        <p>Информация об операциях
+                            с целевыми средствами
+                            из бюджета</p>
+                        <div class="after-img">
+                            <img src="../public/docs-2.svg" alt="">
+                        </div>
+                    </div>
+                </a>
+                <a href="../docs/otchet o fin rez deyatelnosty.pdf">
+                    <div class="docs-copr-plash-3">
+                        <p>Отчет о финансовых
+                            результатах деятельности учреждения</p>
+                        <div class="after-img">
+                            <img src="../public/docs-2.svg" alt="">
+                        </div>
+                    </div>
+                </a>
+                <a href="../docs/12753859_0503730G_2024+год.pdf">
+                    <div class="docs-copr-plash-3">
+                        <p>Баланс государственного
+                            (муниципального) учреждения</p>
+                        <div class="after-img">
+                            <img src="../public/docs-2.svg" alt="">
+                        </div>
+                    </div>
+                </a>
+                <a href="../docs/12385545_0503737G_2024+год.pdf">
+                    <div class="docs-copr-plash-3">
+                        <p>Отчет об исполнении
+                            учреждением плана его финансово-хозяйственной деятельности</p>
+                        <div class="after-img">
+                            <img src="../public/docs-2.svg" alt="">
+                        </div>
+                    </div>
+                </a>
+                <a href="../docs/отчет+за+2024.pdf">
+                    <div class="docs-copr-plash-3">
+                        <p>Информация о
+                            результатах деятельности и
+                            об использовании имущества</p>
+                        <div class="after-img">
+                            <img src="../public/docs-2.svg" alt="">
+                        </div>
+                    </div>
+                </a>
+                <a href="../docs/Профилактическое+мероприятие+ГУ+МЧС+от+04.07.2024.pdf">
+                    <div class="docs-copr-plash-3">
+                        <p>Сведения о контрольных мероприятиях и их результатах</p>
+                        <div class="after-img">
+                            <img src="../public/docs-2.svg" alt="">
+                        </div>
+                    </div>
+                </a>
+                <a href="../docs/Карточка организации.pdf">
+                    <div class="docs-copr-plash-3">
+                        <p>Карточка
+                            организации ГАУ
+                            Медиацентр</p>
+                        <div class="after-img">
+                            <img src="../public/docs-2.svg" alt="">
+                        </div>
+                    </div>
+                </a>
+                <a href="../docs/polozhenie-o-sisteme-oplaty-truda-rabotnikov-gau-mediaczentr.pdf">
+                    <div class="docs-copr-plash-3">
+                        <p>Положение о системе оплаты труда работников ГАУ
+                            Медиацентр</p>
+                        <div class="after-img">
+                            <img src="../public/docs-2.svg" alt="">
+                        </div>
+                    </div>
+                </a>
+                <a href="../docs/perechen_meropriyatij_gau_mediaczentr_2023.pdf">
+                    <div class="docs-copr-plash-3">
+                        <p>Перечень
+                            рекомендуемых мероприятий по улучшению условий труда</p>
+                        <div class="after-img">
+                            <img src="../public/docs-2.svg" alt="">
+                        </div>
+                    </div>
+                </a>
+                <a href="../docs/sout_2023.pdf">
+                    <div class="docs-copr-plash-3">
+                        <p>Сводная ведомость
+                            результатов проведения
+                            специальной оценки условий труда</p>
+                        <div class="after-img">
+                            <img src="../public/docs-2.svg" alt="">
+                        </div>
+                    </div>
+                </a>
+                <a href="../docs/polozhenie_o_poryadke_okazaniya_platnyh_uslug.pdf">
+                    <div class="docs-copr-plash-3">
+                        <p>Положение о порядке оказания платных услуг физическим и
+                            юридическим
+                            лицам, учете и распределении средств от оказания платных услуг ГАУ Медиацентр</p>
+                        <div class="after-img">
+                            <img src="../public/docs-2.svg" alt="">
+                        </div>
+                    </div>
+                </a>
+                <a href="../docs/prejskurant.pdf">
+                    <div class="docs-copr-plash-3">
+                        <p>Прейскурант на
+                            платные услуги (работы)
+                            ГАУ Медиацентр</p>
+                        <div class="after-img">
+                            <img src="../public/docs-2.svg" alt="">
+                        </div>
+                    </div>
+                </a>
+                <a href="../docs/prikaz_PR-LN-58_15.10.2021.pdf">
+                    <div class="docs-copr-plash-3">
+                        <p>Приказ об утверждении
+                            перечня товаров, работ, услуг, закупаемых у субъектов малого и среднего
+                            предпринимательства от 15.10.2021 № ПР-ЛН-58/21</p>
+                        <div class="after-img">
+                            <img src="../public/docs-2.svg" alt="">
+                        </div>
+                    </div>
+                </a>
+                <a href="../docs/prikaz_PR-LN-96_28.05.2024.pdf">
+                    <div class="docs-copr-plash-3">
+                        <p>Приказ от 28.05.2024 №
+                            ПР-ЛН-96/24 "О внесении изменений в приложение к приказу ГАУ Медиацентр от
+                            15.10.2021 № ПР-ЛН-58/21"</p>
+                        <div class="after-img">
+                            <img src="../public/docs-2.svg" alt="">
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Руководство -->
+    <section class="active" data-content="ruk">
+        <div class="cved">
+            <h1>Руководство</h1>
+            <div class="all-plash">
+                <div class="bord-plash">
+                    <div class="one-plash">
+                        <p>ФИО</p>
+                        <p>Должность</p>
+                    </div>
+                </div>
+                <div class="bord-plash">
+                    <div class="one-plash">
+                        <p>ФИО</p>
+                        <p>Должность</p>
+                    </div>
+                </div>
+                <div class="bord-plash">
+                    <div class="one-plash">
+                        <p>ФИО</p>
+                        <p>Должность</p>
+                    </div>
+                </div>
+                <div class="bord-plash">
+                    <div class="one-plash">
+                        <p>ФИО</p>
+                        <p>Должность</p>
+                    </div>
+                </div>
+                <div class="bord-plash">
+                    <div class="one-plash">
+                        <p>ФИО</p>
+                        <p>Должность</p>
+                    </div>
+                </div>
+                <div class="bord-plash">
+                    <div class="one-plash">
+                        <p>ФИО</p>
+                        <p>Должность</p>
+                    </div>
+                </div>
+                <div class="bord-plash">
+                    <div class="one-plash">
+                        <p>ФИО</p>
+                        <p>Должность</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- План работы -->
+    <section class="active" data-content="plan">
+        <div class="cved">
+            <h1>План работы</h1>
+            <div class="bord-plan">
+                <p class="plan-text">Календарный план ГАУ Медиацентр на 2025-2026 учебный год</p>
+                <div class="all-plan">
+                    <a href="" class="one-plan">
+                        <p>Сентябрь</p>
+                    </a>
+                    <a href="" class="one-plan">
+                        <p>Октябрь</p>
+                    </a>
+                    <a href="" class="one-plan">
+                        <p>Ноябрь</p>
+                    </a>
+                    <a href="" class="one-plan">
+                        <p>Декабрь</p>
+                    </a>
+                    <a href="" class="one-plan">
+                        <p>Январь</p>
+                    </a>
+                    <a href="" class="one-plan">
+                        <p>Февраль</p>
+                    </a>
+                    <a href="" class="one-plan">
+                        <p>Март</p>
+                    </a>
+                    <a href="" class="one-plan">
+                        <p>Апрель</p>
+                    </a>
+                    <a href="" class="one-plan">
+                        <p>Май</p>
+                    </a>
+                    <a href="" class="one-plan">
+                        <p>Июнь</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Доставляемые возможности -->
+    <section class="active" data-content="dos">
+        <div class="cved">
+            <h1>Доставляемые возможности</h1>
+            <div class="bord-vozm">
+                <div class="bord-header">
+                    <p class="vozm-text">Название</p>
+                    <p class="vozm-text-2">Целевая группа</p>
+                </div>
+                <div class="vozm-all">
+                    <p class="vozm-text-2">
+                        Описание возможности/ <br>
+                        Описание возможности/ <br>
+                        Описание возможности/ <br>
+                    </p>
+                    <div class="vozm-padval">
+                        <div class="prof"></div>
+                        <div class="otvec">
+                            <p>Ответственное лицо</p>
+                            <div class="podv-a">
+                                <a href="">+7 (000)000-00-00</a>
+                                <a href="">e-mail</span></a>
                             </div>
                         </div>
                     </div>
-                </section>
-                <!-- Руководство -->
-                <section id="leadership">
-                    <div class="cved">
-                        <h1>Руководство</h1>
-                        <div class="all-plash">
-                            <div class="bord-plash">
-                                <div class="one-plash">
-                                    <p>ФИО</p>
-                                    <p>Должность</p>
-                                </div>
-                            </div>
-                            <div class="bord-plash">
-                                <div class="one-plash">
-                                    <p>ФИО</p>
-                                    <p>Должность</p>
-                                </div>
-                            </div>
-                            <div class="bord-plash">
-                                <div class="one-plash">
-                                    <p>ФИО</p>
-                                    <p>Должность</p>
-                                </div>
-                            </div>
-                            <div class="bord-plash">
-                                <div class="one-plash">
-                                    <p>ФИО</p>
-                                    <p>Должность</p>
-                                </div>
-                            </div>
-                            <div class="bord-plash">
-                                <div class="one-plash">
-                                    <p>ФИО</p>
-                                    <p>Должность</p>
-                                </div>
-                            </div>
-                            <div class="bord-plash">
-                                <div class="one-plash">
-                                    <p>ФИО</p>
-                                    <p>Должность</p>
-                                </div>
-                            </div>
-                            <div class="bord-plash">
-                                <div class="one-plash">
-                                    <p>ФИО</p>
-                                    <p>Должность</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- План работы -->
-                <section id="work-plan">
-                    <div class="cved">
-                        <h1>План работы</h1>
-                        <div class="bord-plan">
-                            <p class="plan-text">Календарный план ГАУ Медиацентр на 2025-2026 учебный год</p>
-                            <div class="all-plan">
-                                <a href="" class="one-plan">
-                                    <p>Сентябрь</p>
-                                </a>
-                                <a href="" class="one-plan">
-                                    <p>Октябрь</p>
-                                </a>
-                                <a href="" class="one-plan">
-                                    <p>Ноябрь</p>
-                                </a>
-                                <a href="" class="one-plan">
-                                    <p>Декабрь</p>
-                                </a>
-                                <a href="" class="one-plan">
-                                    <p>Январь</p>
-                                </a>
-                                <a href="" class="one-plan">
-                                    <p>Февраль</p>
-                                </a>
-                                <a href="" class="one-plan">
-                                    <p>Март</p>
-                                </a>
-                                <a href="" class="one-plan">
-                                    <p>Апрель</p>
-                                </a>
-                                <a href="" class="one-plan">
-                                    <p>Май</p>
-                                </a>
-                                <a href="" class="one-plan">
-                                    <p>Июнь</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- Доставляемые возможности -->
-                <section id="opportunities">
-                    <div class="cved">
-                        <h1>Доставляемые возможности</h1>
-                        <div class="bord-vozm">
-                            <div class="bord-header">
-                                <p class="vozm-text">Название</p>
-                                <p class="vozm-text-2">Целевая группа</p>
-                            </div>
-                            <div class="vozm-all">
-                                <p class="vozm-text-2">
-                                    Описание возможности/ <br>
-                                    Описание возможности/ <br>
-                                    Описание возможности/ <br>
-                                </p>
-                                <div class="vozm-padval">
-                                    <div class="prof"></div>
-                                    <div class="otvec">
-                                        <p>Ответственное лицо</p>
-                                        <div class="podv-a">
-                                            <a href="">+7 (000)000-00-00</a>
-                                            <a href="">e-mail</span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                </div>
             </div>
         </div>
     </section>
