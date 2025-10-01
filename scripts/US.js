@@ -36,6 +36,81 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Устанавливаем начальное состояние (показываем "main")
     setActive('main');
+    // --- Выпадающий список для "Тип заявки" в форме на вкладке apply ---
+    const applyContainer = document.querySelector('[data-content="apply"]');
+    if (applyContainer) {
+        const typeBlock = applyContainer.querySelector('.type');
+        const dropdown = applyContainer.querySelector('.type-dropdown');
+        const options = applyContainer.querySelectorAll('.type-option');
+        if (typeBlock && dropdown && options.length) {
+            let isOpen = false;
+            const title = typeBlock.querySelector('p');
+            function closeDropdown() {
+                dropdown.style.display = 'none';
+                isOpen = false;
+            }
+            function openDropdown() {
+                dropdown.style.display = 'block';
+                isOpen = true;
+            }
+            typeBlock.addEventListener('click', (e) => {
+                e.stopPropagation();
+                isOpen ? closeDropdown() : openDropdown();
+            });
+            options.forEach(opt => {
+                opt.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const text = opt.textContent.trim();
+                    if (title) title.textContent = text;
+                    typeBlock.dataset.value = opt.getAttribute('data-value') || '';
+                    closeDropdown();
+                });
+            });
+            window.addEventListener('click', (e) => {
+                if (isOpen && !dropdown.contains(e.target) && !typeBlock.contains(e.target)) {
+                    closeDropdown();
+                }
+            });
+        }
+    }
+    // --- Тоггл только для блока "Локальные акты" в разделе Документы ---
+    (function initLocalActsToggle() {
+        const docsRoot = document.querySelector('[data-content="docs"]');
+        if (!docsRoot) return;
+        // Находим все группы .docs-copr-plash2 и выбираем ту, где заголовок <p> == "Локальные акты"
+        const groups = Array.from(docsRoot.querySelectorAll('.docs-copr-plash2'));
+        const localActsGroup = groups.find(g => {
+            const titleP = g.querySelector(':scope > p');
+            return titleP && titleP.textContent.trim() === 'Локальные акты';
+        });
+        if (!localActsGroup) return;
+
+        const button = localActsGroup.querySelector('.button-1');
+        const label = button ? (button.querySelector('p') || button) : null;
+        const items = Array.from(localActsGroup.querySelectorAll('.docs-copr-plash-3'));
+        if (!button || items.length === 0) return;
+
+        const VISIBLE_COUNT = 3; // показываем первые 3 по умолчанию
+        let expanded = false;
+
+        function applyState() {
+            items.forEach((el, idx) => {
+                el.style.display = (expanded || idx < VISIBLE_COUNT) ? '' : 'none';
+            });
+            if (label) label.textContent = expanded ? 'Скрыть' : 'Смотреть ещё';
+        }
+
+
+
+        // начальное состояние
+        applyState();
+
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            expanded = !expanded;
+            applyState();
+        });
+    })();
 
     // --- Календарь с модалками выбора месяца и года (поддержка нескольких .Kalen) ---
     const kalens = Array.from(document.querySelectorAll('.Kalen'));

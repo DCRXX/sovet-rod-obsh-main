@@ -85,8 +85,7 @@ p {
     text-decoration: underline;
 }
 
-
-@media (max-width: 870px) {
+@media (max-width: 900px) {
     .kvadrat {
         height: auto;
         padding: 20px;
@@ -108,7 +107,9 @@ p {
     .up {
         position: absolute;
         top: 50px;
-        right: 40px;
+        right: 16px;
+        width: 70px;
+        height: 70px;
         transform: none;
     }
 

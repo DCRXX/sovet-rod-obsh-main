@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Функция инициализации карусели
     function initializeCarousel() {
         const carousel = document.querySelector('.prof-ob-reb-3[data-content="otz"]');
-        if (!carousel) return; // Проверяем, существует ли элемент
+        if (!carousel) return;
 
         const inner = carousel.querySelector('.carousel-inner');
         const items = carousel.querySelectorAll('.prof-ob-reb-5-6');
@@ -48,49 +48,62 @@ document.addEventListener('DOMContentLoaded', function () {
         let currentIndex = 0;
         let isScrolling = false;
 
-        // Очищаем предыдущие точки, если они были созданы
+        // Точки
         dotsContainer.innerHTML = '';
-
-        // Создаем точки
-        items.forEach((_, index) => {
+        const frag = document.createDocumentFragment();
+        for (let i = 0; i < items.length; i++) {
             const dot = document.createElement('div');
-            dot.classList.add('carousel-dot');
-            if (index === 0) dot.classList.add('active');
-            dotsContainer.appendChild(dot);
-        });
-
+            dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+            dot.addEventListener('click', () => setIndex(i));
+            frag.appendChild(dot);
+        }
+        dotsContainer.appendChild(frag);
         const dots = carousel.querySelectorAll('.carousel-dot');
 
-        // Обновление позиции карусели
-        function updateCarousel() {
-            inner.style.transform = `translateX(-${currentIndex * 100}%)`;
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentIndex);
-            });
-        }
+        const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
+        const width = () => inner.clientWidth;
+        const updateDots = () => dots.forEach((d, i) => d.classList.toggle('active', i === currentIndex));
+        const setIndex = (i) => {
+            currentIndex = clamp(i, 0, items.length - 1);
+            inner.scrollTo({ left: width() * currentIndex, behavior: 'smooth' });
+            updateDots();
+        };
 
-        // Обработка кликов по точкам
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                currentIndex = index;
-                updateCarousel();
-            });
-        });
+        // Синхронизация с ручным скроллом + авто-снап
+        let scrollTimer;
+        inner.addEventListener('scroll', () => {
+            const idx = Math.round(inner.scrollLeft / width());
+            if (idx !== currentIndex) { currentIndex = clamp(idx, 0, items.length - 1); updateDots(); }
+            clearTimeout(scrollTimer);
+            scrollTimer = setTimeout(() => setIndex(currentIndex), 120);
+        }, { passive: true });
 
-        // Обработка прокрутки колесика мыши для карусели
-        carousel.addEventListener('wheel', (e) => {
+        // Колесо мыши
+        inner.addEventListener('wheel', (e) => {
+            e.preventDefault();
             if (isScrolling) return;
             isScrolling = true;
-            setTimeout(() => {
-                isScrolling = false;
-            }, 500);
+            setTimeout(() => { isScrolling = false; }, 220);
+            setIndex(currentIndex + (e.deltaY > 0 ? 1 : -1));
+        }, { passive: false });
 
-            if (e.deltaY > 0) {
-                currentIndex = Math.min(currentIndex + 1, items.length - 1);
-            } else {
-                currentIndex = Math.max(currentIndex - 1, 0);
-            }
-            updateCarousel();
-        });
+        // Свайп
+        let sx = 0, sy = 0, moved = false;
+        const TH = 30;
+        inner.addEventListener('touchstart', (e) => {
+            const t = e.touches && e.touches[0]; if (!t) return;
+            sx = t.clientX; sy = t.clientY; moved = false;
+        }, { passive: true });
+        inner.addEventListener('touchmove', (e) => {
+            const t = e.touches && e.touches[0]; if (!t) return;
+            const dx = t.clientX - sx; const dy = t.clientY - sy;
+            if (Math.abs(dx) > Math.abs(dy)) { e.preventDefault(); moved = true; }
+        }, { passive: false });
+        inner.addEventListener('touchend', (e) => {
+            if (!moved) return;
+            const c = e.changedTouches && e.changedTouches[0]; if (!c) return;
+            const dx = c.clientX - sx;
+            if (Math.abs(dx) >= TH) setIndex(currentIndex + (dx < 0 ? 1 : -1));
+        }, { passive: true });
     }
 });

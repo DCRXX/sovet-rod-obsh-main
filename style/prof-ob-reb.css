@@ -1,3 +1,6 @@
+@import url(./US.css);
+
+
 .prof-ob-reb-1 {
     width: 100%;
     padding: 45px 50px;
@@ -13,41 +16,7 @@
     letter-spacing: -2%;
 }
 
-.spis {
-    display: flex;
-    gap: 40px;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-behavior: smooth;
-    justify-content: flex-start;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    -webkit-overflow-scrolling: touch;
-}
 
-.spis a {
-    color: #DC3E48;
-}
-
-.spis-item {
-    padding: 10px 24px;
-    display: flex;
-    width: 325px;
-    background-color: transparent;
-    border: 1px solid #DC3E48;
-    border-radius: 100px;
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-}
-
-.spis-item p {
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 160%;
-    letter-spacing: -2%;
-}
 
 .prof-text-1 {
     display: flex;
@@ -56,25 +25,7 @@
     gap: 10px;
 }
 
-.spis-item.active {
-    background-color: #DC3E48;
-    color: #fff;
-    border-color: #DC3E48;
-}
 
-.spis-item.active p {
-    color: #fff;
-}
-
-.spis-item:hover:not(.active) {
-    background-color: #fff;
-    color: #DC3E48;
-    border-color: #DC3E48;
-}
-
-.spis-item:hover:not(.active) p {
-    color: #DC3E48;
-}
 
 .prof-ob-reb-3 {
     position: relative;
@@ -84,14 +35,30 @@
     justify-content: center;
     align-items: center;
     gap: 30px;
+    
 }
 
 .carousel-inner {
     display: flex;
-    transition: transform 0.5s ease;
     width: 100%;
     gap: 5px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
 }
+
+.mer-prof:hover {
+    background-color: white;
+}
+
+.mer-prof:hover p {
+    color: rgba(220, 62, 72, 1);
+}
+
+/* скрытие полосы прокрутки для WebKit */
+.carousel-inner::-webkit-scrollbar { display: none; }
 
 .carousel-dots {
     display: flex;
@@ -114,7 +81,9 @@
 .carousel-dot.active {
     background: #DC3E48;
 }
-
+.prof-ob-reb-5{
+    gap: 10px !important;
+}
 .prof-ob-reb-5,
 .prof-ob-reb-5-3,
 .prof-ob-reb-5-4,
@@ -133,11 +102,12 @@
     flex: 0 0 100%;
     box-sizing: border-box;
     text-align: start;
+    scroll-snap-align: start;
 }
 
 .prof-ob-reb-5-4,
 .prof-ob-reb-5-7 {
-    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .prof-ob-reb-5-7 {
@@ -293,6 +263,7 @@
 
 .video-prof {
     min-width: 450px;
+    min-height: 200px;
     background-color: #fff;
     display: flex;
     justify-content: center;
@@ -400,6 +371,11 @@
 
     .glav-text {
         font-size: 24px;
+    }
+}
+@media (max-width: 530px){
+    .video-prof{
+        min-width: 100%;
     }
 }
 

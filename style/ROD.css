@@ -74,7 +74,7 @@
 }
 .ul-e,
 .ul{
-    padding-left: 45px;
+    padding-left: 15px;
     gap: 20px;
     display: flex;
     flex-direction: column;
@@ -345,7 +345,6 @@
     gap: 10px;
     display: flex;
     flex-direction: column;
-    height: 200px;
     color: #FFFFFF;
     font-size: 20px;
     font-weight: 600;
@@ -452,6 +451,9 @@
 @media(max-width: 740px){
     .ROD-content-raz-p-1 img{
         min-height: 100%;
+    }
+    .Rod-body{
+        gap: 25px;
     }
 }
 @media(max-width: 530px){

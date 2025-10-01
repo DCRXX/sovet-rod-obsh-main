@@ -3,3 +3,32 @@
 .glav-2{
     background-image: url(../public/Rectangle\ 147\(4\).svg);
 }
+
+
+@media (max-width: 1850px){
+    .glav-2{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.788), rgba(0, 0, 0, 0)), url(../public/Rectangle\ 147\(4\).svg);
+    }
+    
+    .glav-2:nth-child(2) {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.788), rgba(0, 0, 0, 0)), url(../public/conk.svg);
+        background-position: top;
+    }
+    
+    .glav-2:nth-child(3) {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.788), rgba(0, 0, 0, 0)), url(../public/sssssskk.svg);
+    }
+    
+    .glav-2:nth-child(4) {
+        background-image:linear-gradient(rgba(0, 0, 0, 0.788), rgba(0, 0, 0, 0)), url(../public/temvstr.svg);
+    }
+    
+    .glav-2:nth-child(5) {
+        background-image:linear-gradient(rgba(0, 0, 0, 0.788), rgba(0, 0, 0, 0)), url(../public/chto_takoe_uprav_sovet2.svg);
+        background-position: top;
+    }
+    
+    .glav-2:nth-child(6) {
+        background-image:linear-gradient(rgba(0, 0, 0, 0.788), rgba(0, 0, 0, 0)), url(../public/prof-teach.svg);
+    }
+}

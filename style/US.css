@@ -226,11 +226,12 @@ p{
     width: 20px;
 }
 .type{
+    cursor: pointer;
     padding: 10px 10px 10px 10px;
     width: 100%;
     color: #696969;
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 600;
     border-radius: 10px;
     display: flex;
     justify-content: space-between;
@@ -319,6 +320,7 @@ textarea::placeholder{
     border-radius: 15px;
     padding: 10px 20px 10px 15px;
     height: auto;
+    gap: 30px;
 }
 .K{
     display: flex;
@@ -334,11 +336,35 @@ textarea::placeholder{
 .Icon{
     gap: 15px;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
     align-items: center;
 
 }
 
 
+
+
+/* Выпадающее окно для выбора типа заявки */
+.type-dropdown {
+    position: relative;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 5;
+}
+.type-option {
+    padding: 10px 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #696969;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.type-option:hover {
+    background: #e2e2e2;
+}
 
 
 /* Модалка выбора месяца/года */
@@ -424,8 +450,8 @@ textarea::placeholder{
     background-color: #DC3E48;
     border-radius: 16px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
     padding: 16px;
 }
 
@@ -439,6 +465,7 @@ textarea::placeholder{
 
 .docs-copr-plash-1 {
     display: flex;
+    min-width: 613px;
     flex-direction: column;
     align-items: flex-start;
 }
@@ -501,6 +528,13 @@ textarea::placeholder{
     justify-content: center;
     align-items: center;
 }
+.img-plash{
+    width: 100%;
+    height: auto;
+}
+.docs-copr-plash-2{
+    border-radius: 16px;
+}
 
 .watch-all a {
     text-decoration: none;
@@ -539,7 +573,6 @@ textarea::placeholder{
 
     .docs-copr-plash-2 {
         max-width: 680px;
-        border-radius: 16px;
     }
 
     .docs-copr-plash-3 {
@@ -927,6 +960,25 @@ textarea::placeholder{
     }
     .data{
         width: 30%;
+    }
+    .spis-item{
+        min-width: max-content;
+        width: auto;
+    }
+    .us-content{
+        gap: 45px;
+    }
+    .us-content p{
+        font-size: 18px;
+    }
+    .us-content li{
+        font-size: 18px;
+    }
+    .K p{
+        font-size: 16px;
+    }
+    .us-content h1{
+        font-size: 22px;
     }
 }
 @media (max-width: 400px) {
