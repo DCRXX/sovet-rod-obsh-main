@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест API подключения</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 3px;
+        }
+        .success { background-color: #d4edda; color: #155724; }
+        .error { background-color: #f8d7da; color: #721c24; }
+        .loading { background-color: #d1ecf1; color: #0c5460; }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover { background-color: #0056b3; }
+        .data-display {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 3px;
+            margin-top: 10px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>Тест API подключения для carousel-container</h1>
+    
+    <div class="test-section">
+        <h2>1. Тест API баннеров</h2>
+        <button onclick="testBannersAPI()">Тестировать API баннеров</button>
+        <div id="banners-status"></div>
+        <div id="banners-data"></div>
+        <div id="banners-preview"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>2. Тест API проектов</h2>
+        <button onclick="testProjectsAPI()">Тестировать API проектов</button>
+        <div id="projects-status"></div>
+    <div id="projects-data"></div>
+    <div id="projects-preview"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>3. Тест API новостей</h2>
+        <button onclick="testNewsAPI()">Тестировать API новостей</button>
+        <div id="news-status"></div>
+    <div id="news-data"></div>
+    <div id="news-preview"></div>
+    </div>
+
+    <script>
+        // Функция для отображения статуса
+        function showStatus(elementId, message, type) {
+            const element = document.getElementById(elementId);
+            element.innerHTML = `<div class="status ${type}">${message}</div>`;
+        }
+
+        // Функция для отображения данных
+        function showData(elementId, data) {
+            const element = document.getElementById(elementId);
+            element.innerHTML = `<div class="data-display">${JSON.stringify(data, null, 2)}</div>`;
+        }
+
+        // Тест API баннеров
+        async function testBannersAPI() {
+            showStatus('banners-status', 'Загрузка...', 'loading');
+            document.getElementById('banners-data').innerHTML = '';
+            document.getElementById('banners-preview').innerHTML = '';
+            
+            try {
+                const response = await fetch('https://terlynedev.space/api/banners');
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                showStatus('banners-status', `Успешно загружено ${data.length} баннеров`, 'success');
+                showData('banners-data', data);
+                
+                // Показываем превью изображений
+                if (data && data.length > 0) {
+                    const previewHtml = data.map((banner, index) => {
+                        const imageUrl = banner.image_url ? 
+                            `https://terlynedev.space/api/files/${banner.image_url}` : 
+                            'Нет изображения';
+                        
+                        return `
+                            <div style="border: 1px solid #ddd; padding: 15px; margin: 10px 0; border-radius: 5px; ${banner.is_active ? 'border-color: green;' : 'border-color: red; opacity: 0.7;'}">
+                                <h4>Баннер ${index + 1} ${banner.is_active ? '✅ Активен' : '❌ Неактивен'}</h4>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                                    <div>
+                                        <p><strong>🆔 ID:</strong> <code>${banner.id || 'Не указан'}</code></p>
+                                        <p><strong>📝 Заголовок:</strong> ${banner.title || 'Не указан'}</p>
+                                        <p><strong>📄 Описание:</strong> ${banner.description || 'Не указано'}</p>
+                                        <p><strong>🔗 Ссылка:</strong> ${banner.redirect_url || 'Не указана'}</p>
+                                        <p><strong>📊 Порядок:</strong> ${banner.count_order || 'Не указан'}</p>
+                                        <p><strong>✅ Активен:</strong> ${banner.is_active ? 'Да' : 'Нет'}</p>
+                                    </div>
+                                    <div>
+                                        <p><strong>🖼️ Путь к изображению:</strong><br><code>${banner.image_url || 'Не указан'}</code></p>
+                                        <p><strong>🌐 Полный URL:</strong><br><code>${imageUrl}</code></p>
+                                    </div>
+                                </div>
+                                ${banner.image_url ? 
+                                    `<div style="margin-top: 10px;">
+                                        <strong>Превью:</strong><br>
+                                        <img src="${imageUrl}" alt="Banner Preview" style="max-width: 300px; max-height: 150px; border: 1px solid #ccc;" onerror="this.style.display='none'; this.nextSibling.style.display='block';">
+                                        <p style="display:none; color: red; background: #ffe6e6; padding: 5px;">❌ Ошибка загрузки изображения</p>
+                                     </div>` : 
+                                    '<p style="color: orange; background: #fff3cd; padding: 5px;">⚠️ Изображение не найдено</p>'
+                                }
+                            </div>
+                        `;
+                    }).join('');
+                    
+                    document.getElementById('banners-preview').innerHTML = `
+                        <h3>Превью баннеров:</h3>
+                        ${previewHtml}
+                    `;
+                }
+                
+            } catch (error) {
+                showStatus('banners-status', `Ошибка: ${error.message}`, 'error');
+                console.error('Ошибка загрузки баннеров:', error);
+            }
+        }
+
+        // Тест API проектов
+        async function testProjectsAPI() {
+            showStatus('projects-status', 'Загрузка...', 'loading');
+            document.getElementById('projects-data').innerHTML = '';
+            document.getElementById('projects-preview').innerHTML = '';
+            try {
+                const response = await fetch('https://terlynedev.space/api/projects');
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                const data = await response.json();
+                showStatus('projects-status', `Успешно загружено ${data.length} проектов`, 'success');
+                showData('projects-data', data);
+                // Превью проектов
+                if (data && data.length > 0) {
+                    const previewHtml = data.map((project, index) => {
+                        const imageUrl = project.image_url ? `https://terlynedev.space/api/files/${project.image_url}` : './public/glavnaya.svg';
+                        return `
+                            <div style="border: 1px solid #ddd; padding: 15px; margin: 10px 0; border-radius: 5px;">
+                                <h4>Проект ${index + 1}</h4>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                                    <div>
+                                        <p><strong>🆔 ID:</strong> <code>${project.id || 'Не указан'}</code></p>
+                                        <p><strong>📝 Заголовок:</strong> ${project.title || 'Не указан'}</p>
+                                        <p><strong>📄 Описание:</strong> ${project.body || 'Не указано'}</p>
+                                        <p><strong>🔗 Ссылка:</strong> ${project.redirect_url || 'Не указана'}</p>
+                                    </div>
+                                    <div>
+                                        <p><strong>🖼️ Путь к изображению:</strong><br><code>${project.image_url || 'Не указан'}</code></p>
+                                        <p><strong>🌐 Полный URL:</strong><br><code>${imageUrl}</code></p>
+                                    </div>
+                                </div>
+                                <div style="margin-top: 10px;">
+                                    <strong>Превью:</strong><br>
+                                    <img src="${imageUrl}" alt="Project Preview" style="max-width: 300px; max-height: 150px; border: 1px solid #ccc;" onerror="this.src='./public/glavnaya.svg';">
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+                    document.getElementById('projects-preview').innerHTML = `<h3>Превью проектов:</h3>${previewHtml}`;
+                }
+            } catch (error) {
+                showStatus('projects-status', `Ошибка: ${error.message}`, 'error');
+                console.error('Ошибка загрузки проектов:', error);
+            }
+        }
+
+        // Тест API новостей
+        async function testNewsAPI() {
+            showStatus('news-status', 'Загрузка...', 'loading');
+            document.getElementById('news-data').innerHTML = '';
+            document.getElementById('news-preview').innerHTML = '';
+            try {
+                const response = await fetch('https://terlynedev.space/api/news');
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                const data = await response.json();
+                showStatus('news-status', `Успешно загружено ${data.length} новостей`, 'success');
+                showData('news-data', data);
+                // Превью новостей
+                if (data && data.length > 0) {
+                    const previewHtml = data.map((newsItem, index) => {
+                        const imageUrl = newsItem.image_url ? `https://terlynedev.space/api/files/${newsItem.image_url}` : './public/news-placeholder.svg';
+                        return `
+                            <div style="border: 1px solid #ddd; padding: 15px; margin: 10px 0; border-radius: 5px;">
+                                <h4>Новость ${index + 1}</h4>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                                    <div>
+                                        <p><strong>🆔 ID:</strong> <code>${newsItem.id || 'Не указан'}</code></p>
+                                        <p><strong>📝 Заголовок:</strong> ${newsItem.title || 'Не указан'}</p>
+                                        <p><strong>📄 Описание:</strong> ${newsItem.min_text || 'Не указано'}</p>
+                                        <p><strong>🔗 Ссылка:</strong> ${newsItem.redirect_url || 'Не указана'}</p>
+                                        <p><strong>📅 Дата:</strong> ${newsItem.news_date || 'Не указана'}</p>
+                                    </div>
+                                    <div>
+                                        <p><strong>🖼️ Путь к изображению:</strong><br><code>${newsItem.image_url || 'Не указан'}</code></p>
+                                        <p><strong>🌐 Полный URL:</strong><br><code>${imageUrl}</code></p>
+                                    </div>
+                                </div>
+                                <div style="margin-top: 10px;">
+                                    <strong>Превью:</strong><br>
+                                    <img src="${imageUrl}" alt="News Preview" style="max-width: 300px; max-height: 150px; border: 1px solid #ccc;" onerror="this.src='./public/news-placeholder.svg';">
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+                    document.getElementById('news-preview').innerHTML = `<h3>Превью новостей:</h3>${previewHtml}`;
+                }
+            } catch (error) {
+                showStatus('news-status', `Ошибка: ${error.message}`, 'error');
+                console.error('Ошибка загрузки новостей:', error);
+            }
+        }
+    </script>
+</body>
+</html>

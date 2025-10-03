@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/header.css">
+</head>
+
+<body>
+    <section>
+        <div class="header" id="header">
+            <div class="icons">
+                <a href="https://vk.com/roditelmoscow" target="_blank">
+                    <picture><img src="./public/Vk.svg" alt="VK" class="vk-img"></picture>
+                </a>
+                <a href="https://t.me/eksro" target="_blank">
+                    <picture><img src="./public/tg.svg" alt="Telegram" class="tg-img"></picture>
+                </a>
+            </div>
+            <div class="contact">
+                Единая справочная: <span class="phone" data-phone="8 (916) 693 95 30">8 (916) 693 95 30</span>
+            </div>
+        </div>
+        <div class="header-second">
+            <a href="./index.html">
+                <img src="./public/logoms.svg" alt="Logo" class="logo">
+            </a>
+            <div class="nav-buttons" id="nav-buttons">
+                <a href="org.html" class="nav-button">Об организации</a>
+                <a href="rodtorg.html" class="nav-button">Родителям</a>
+                <a href="orbtorg.html" class="nav-button">Образовательным организациям</a>
+                <a href="US.html" class="nav-button">Управляющим советам</a>
+                <a href="Cont.html" class="nav-button">Контакты</a>
+                <a href="Part.html" class="nav-button">Партнеры</a>
+            </div>
+            <div class="icons">
+                <div class="hamburger" id="hum">
+                    <img src="./public/menu.svg" alt="">
+                    <div class="hamburger-nav">
+                        <a href="org.html" class="nav-button">Об организации</a>
+                        <a href="rodtorg.html" class="nav-button">Родителям</a>
+                        <a href="orbtorg.html" class="nav-button">Образовательным организациям</a>
+                        <a href="US.html" class="nav-button">Управляющим советам</a>
+                        <a href="Cont.html" class="nav-button">Контакты</a>
+                        <a href="Part.html" class="nav-button">Партнеры</a>
+                    </div>
+                </div>
+                <button class="Pois" id="search-button"><img src="./public/search.svg" alt="Search"
+                        class="search-icon"></button>
+                <div class="vod" id="search-input-container">
+                    <textarea class="tex" placeholder="Поиск..." rows="1"></textarea>
+                    <button id="close-search"><img src="./public/close.svg" alt=""></button>
+                </div>
+            </div>
+
+            <div class="notification" id="copyNotification">Номер скопирован</div>
+        </div>
+    </section>
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/Header.js"></script>
+    <script src="./scripts/script-new.js"></script>
+</body>
+
+</html>

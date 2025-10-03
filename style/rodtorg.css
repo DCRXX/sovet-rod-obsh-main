@@ -1,13 +1,13 @@
 @import url(./orbtorg.css);
 
 .glav-2{
-    background-image: url(../public/Rectangle\ 147\(4\).svg);
+    background-image: url(../public/plash-1-1.svg);
 }
 
 
 @media (max-width: 1850px){
     .glav-2{
-        background-image: linear-gradient(rgba(0, 0, 0, 0.788), rgba(0, 0, 0, 0)), url(../public/Rectangle\ 147\(4\).svg);
+        background-image: linear-gradient(rgba(0, 0, 0, 0.788), rgba(0, 0, 0, 0)), url(../public/plash-1-1.svg);
     }
     
     .glav-2:nth-child(2) {

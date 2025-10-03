@@ -10,10 +10,6 @@
     box-sizing: border-box;
 }
 
-p {
-    margin: 4px 0;
-}
-
 .footer-top {
     display: flex;
     justify-content: space-between;
@@ -85,7 +81,8 @@ p {
     text-decoration: underline;
 }
 
-@media (max-width: 900px) {
+
+@media (max-width: 870px) {
     .kvadrat {
         height: auto;
         padding: 20px;
@@ -107,9 +104,7 @@ p {
     .up {
         position: absolute;
         top: 50px;
-        right: 16px;
-        width: 70px;
-        height: 70px;
+        right: 10px;
         transform: none;
     }
 

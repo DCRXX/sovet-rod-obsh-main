@@ -104,10 +104,18 @@
     text-align: start;
     scroll-snap-align: start;
 }
-
-.prof-ob-reb-5-4,
-.prof-ob-reb-5-7 {
-    flex-wrap: wrap;
+.prof-ob-reb-5-4{
+    flex-direction: row;
+}
+.prof-ob-reb-5-7{
+    width: 100%;
+    background-color: #DC3E48;
+    display: flex;
+    gap: 30px;
+    padding: 16px;
+    border-radius: 16px;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .prof-ob-reb-5-7 {

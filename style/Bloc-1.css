@@ -119,3 +119,112 @@
     background-color: #DC3E48;
 }
 
+@media screen and (max-width: 990px) {
+    .text-block1 {
+        width: 66.75vw;
+        top: 14.4vw;
+        font-size: 3.5vw;
+    }
+
+    .text-block2 {
+        width: 56vw;
+        top: 22vw;
+        font-size: 1.7vw;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .carousel-container {
+        min-height: 300px;
+    }
+
+    .carousel-slide img {
+        min-height: 300px;
+    }
+
+    .text-block1 {
+        width: 92vw;
+        top: 28vw;
+        font-size: 5vw;
+    }
+
+    .text-block2 {
+        width: 83vw;
+        top: 39vw;
+        font-size: 2.7vw;
+    }
+
+    .carousel-btn {
+        width: 7vw;
+        height: 7vw;
+    }
+
+    .carousel-btn img.arrow-icon {
+        width: 2vw;
+        height: 2vw;
+    }
+
+    .dots-container {
+        width: 11.7vw;
+        height: 0.8389vw;
+        right: 4.9vw;
+    }
+
+    .dot {
+        width: 1.3vw;
+        height: 1.3vw;
+    }
+
+    .dot.active {
+        width: 1.4vw;
+        height: 1.4vw;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .carousel-container {
+        min-height: 250px;
+    }
+
+    .carousel-slide img {
+        min-height: 250px;
+    }
+
+    .text-block1 {
+        width: 92vw;
+        top: 8vw;
+        font-size: 6vw;
+    }
+
+    .text-block2 {
+        width: 80vw;
+        top: 22vw;
+        font-size: 3.6vw;
+    }
+
+    .carousel-btn {
+        width: 7vw;
+        height: 7vw;
+    }
+
+    .carousel-btn img.arrow-icon {
+        width: 2vw;
+        height: 2vw;
+    }
+
+    .dots-container {
+        width: 30vw;
+        height: 4.5vw;
+        right: 6.5vw;
+    }
+
+    .dot {
+        width: 2.9vw;
+        height: 2.9vw;
+    }
+
+    .dot.active {
+        width: 3.3vw;
+        height: 3.3vw;
+    }
+}

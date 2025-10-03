@@ -3,7 +3,8 @@
 // Относится к: index.html - секция с каруселью слайдов
 // ========================================
 
-document.addEventListener('DOMContentLoaded', () => {
+// Глобальная функция инициализации карусели
+window.initCarousel = function() {
     // Получение всех слайдов карусели
     const slides = document.querySelectorAll('.carousel-slide');
     // Получение контейнера для точек навигации
@@ -13,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = document.querySelector('.next-btn');
     // Индекс текущего слайда
     let currentIndex = 0;
+
+    // Очищаем контейнер точек перед добавлением новых
+    dotsContainer.innerHTML = '';
 
     // Создание точек для навигации по слайдам
     slides.forEach((_, index) => {
@@ -39,14 +43,37 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Обработчики кнопок карусели
-    prevBtn.addEventListener('click', () => {
+    // Удаляем старые обработчики событий если они есть
+    const newPrevBtn = prevBtn.cloneNode(true);
+    const newNextBtn = nextBtn.cloneNode(true);
+    prevBtn.parentNode.replaceChild(newPrevBtn, prevBtn);
+    nextBtn.parentNode.replaceChild(newNextBtn, nextBtn);
+
+    // Обработчики кнопок карусели с предотвращением всплытия
+    newPrevBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         currentIndex = (currentIndex - 1 + slides.length) % slides.length;
         goToSlide(currentIndex);
     });
 
-    nextBtn.addEventListener('click', () => {
+    newNextBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         currentIndex = (currentIndex + 1) % slides.length;
         goToSlide(currentIndex);
     });
+
+
+};
+
+// Инициализация при загрузке страницы (для случаев когда API не отвечает)
+document.addEventListener('DOMContentLoaded', () => {
+    // Ждем немного, чтобы дать время API загрузиться
+    setTimeout(() => {
+        const slides = document.querySelectorAll('.carousel-slide');
+        if (slides.length > 0) {
+            window.initCarousel();
+        }
+    }, 1000);
 });

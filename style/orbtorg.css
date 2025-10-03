@@ -15,6 +15,7 @@
 
 .all-glav {
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
     gap: 35px;
     padding: 10px;
@@ -137,31 +138,6 @@
     .but-glav p {
         font-size: 16px;
     }
-    .glav-2{
-        background-image: linear-gradient(rgba(0, 0, 0, 0.788), rgba(0, 0, 0, 0)), url(../public/conk.svg);
-    }
-    
-    .glav-2:nth-child(2) {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.788), rgba(0, 0, 0, 0)), url(../public/conk.svg);
-        background-position: top;
-    }
-    
-    .glav-2:nth-child(3) {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.788), rgba(0, 0, 0, 0)), url(../public/sssssskk.svg);
-    }
-    
-    .glav-2:nth-child(4) {
-        background-image:linear-gradient(rgba(0, 0, 0, 0.788), rgba(0, 0, 0, 0)), url(../public/temvstr.svg);
-    }
-    
-    .glav-2:nth-child(5) {
-        background-image:linear-gradient(rgba(0, 0, 0, 0.788), rgba(0, 0, 0, 0)), url(../public/chto_takoe_uprav_sovet2.svg);
-        background-position: top;
-    }
-    
-    .glav-2:nth-child(6) {
-        background-image:linear-gradient(rgba(0, 0, 0, 0.788), rgba(0, 0, 0, 0)), url(../public/prof-teach.svg);
-    }
 }
 
 @media (max-width: 1320px) {
@@ -182,7 +158,7 @@
     .glav-2 {
         min-height: 220px;
         width: 100%;
-        padding: 15px 20px;
+        padding: 5px 10px;
     }
 
     .glav-plush {
@@ -224,6 +200,11 @@
         padding: 10px;
     }
 
+    .glav-2 {
+        min-height: 220px;
+        width: 100%;
+        padding: 5px 10px;
+    }
 
     .glav-plush {
         width: 100%;
@@ -241,7 +222,7 @@
 
     .but-glav {
         border: 2px solid #fff;
-        padding: 5px 15px;
+        padding: 10px 15px;
     }
 
     .but-glav p {
@@ -264,6 +245,11 @@
         padding: 10px;
     }
 
+    .glav-2 {
+        min-height: 220px;
+        width: 100%;
+        padding: 5px 10px;
+    }
 
     .glav-plush {
         width: 100%;
@@ -279,6 +265,10 @@
         margin-bottom: 0px;
     }
 
+    .but-glav {
+        border: 2px solid #fff;
+        padding: 10px 15px;
+    }
 
     .but-glav p {
         font-size: 13px;
@@ -300,6 +290,12 @@
         padding: 10px;
     }
 
+    .glav-2 {
+        min-height: 220px;
+        width: 100%;
+        padding: 5px 10px;
+    }
+
     .glav-plush {
         width: 100%;
         height: 100%;
@@ -314,6 +310,10 @@
         margin-bottom: 0px;
     }
 
+    .but-glav {
+        border: 2px solid #fff;
+        padding: 10px 15px;
+    }
 
     .but-glav p {
         font-size: 13px;

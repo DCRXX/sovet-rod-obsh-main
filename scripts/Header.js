@@ -2,112 +2,116 @@
 // ФУНКЦИИ ХЕДЕРА - ОБЩИЕ ФУНКЦИИ
 // Относится к: все страницы - header.html
 // ========================================
+	function initHeaderSearch() {
+		const headerSecond = document.querySelector('.header-second');
+		if (!headerSecond || headerSecond.dataset.searchInited === '1') {
+			return;
+		}
 
-function initHeaderSearch() {
-  var searchBtn = document.getElementById('search-button');
-  var navBtns = document.getElementById('nav-buttons');
-  var searchInput = document.getElementById('search-input-container');
-  var closeBtn = document.getElementById('close-search');
-  var humBtn = document.getElementById('hum');
-  var headerSecond = document.querySelector('.header-second');
+		const searchBtn = document.getElementById('search-button');
+		const navBtns = document.getElementById('nav-buttons');
+		const searchInput = document.getElementById('search-input-container');
+		const closeBtn = document.getElementById('close-search');
+		const humBtn = document.getElementById('hum');
 
-  // Проверяем, что все необходимые элементы найдены
-  if (!searchBtn || !navBtns || !searchInput || !headerSecond) {
-      console.error('Не все элементы для поиска найдены');
-      return;
-  }
+    if (!searchBtn || !navBtns || !searchInput || !headerSecond) {
+        console.error('Не все элементы для поиска найдены');
+        return;
+    }
 
-  // Ищем textarea вместо input
-  var searchField = searchInput.querySelector('.tex');
+		const searchField = searchInput.querySelector('.tex');
+    if (!searchField) {
+        console.error('Поле поиска (.tex) не найдено');
+        return;
+    }
 
-  if (!searchField) {
-      console.error('Поле поиска (.tex) не найдено');
-      return;
-  }
+    searchBtn.addEventListener('click', () => {
+        navBtns.style.display = 'none';
+        searchBtn.style.display = 'none';
+        searchInput.style.display = 'flex';
+        searchField.focus();
+        headerSecond.classList.add('align-left');
+    });
 
-  searchBtn.addEventListener('click', function () {
-      navBtns.style.display = 'none';
-      searchBtn.style.display = 'none';
-      searchInput.style.display = 'flex';
-      searchField.focus(); // Теперь фокусируемся на textarea
-      headerSecond.classList.add('align-left');
-  });
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            navBtns.style.display = '';
+            searchBtn.style.display = '';
+            searchInput.style.display = 'none';
+            searchField.value = '';
+            headerSecond.classList.remove('align-left');
+        });
+    }
 
-  if (closeBtn) {
-      closeBtn.addEventListener('click', function () {
-          navBtns.style.display = '';
-          searchBtn.style.display = '';
-          searchInput.style.display = 'none';
-          searchField.value = ''; // Очищаем textarea
-          headerSecond.classList.remove('align-left');
-      });
-  }
-  if (humBtn) {
-      humBtn.addEventListener('click', function () {
-          navBtns.style.display = '';
-          searchBtn.style.display = '';
-          searchInput.style.display = 'none';
-          searchField.value = '';
-          headerSecond.classList.remove('align-left');
-      });
-  }
+		if (humBtn) {
+        humBtn.addEventListener('click', () => {
+            navBtns.style.display = '';
+            searchBtn.style.display = '';
+            searchInput.style.display = 'none';
+            searchField.value = '';
+            headerSecond.classList.remove('align-left');
+        });
+    }
+
+		headerSecond.dataset.searchInited = '1';
 }
 
 // Инициализация hamburger меню
-function initHamburgerMenu() {
-  // Ждем немного, чтобы HTML успел загрузиться
-  setTimeout(() => {
-      const hamburgerIcon = document.querySelector('.hamburger img');
-      const hamburgerNav = document.querySelector('.hamburger-nav');
+	function initHamburgerMenu() {
+		const hamburgerRoot = document.querySelector('.hamburger');
+		if (!hamburgerRoot || hamburgerRoot.dataset.hamburgerInited === '1') {
+			return;
+		}
 
-      // Проверяем, что элементы найдены
-      if (!hamburgerIcon || !hamburgerNav) {
-          console.error('Hamburger elements not found');
-          return;
-      }
+		const hamburgerIcon = hamburgerRoot.querySelector('img');
+		const hamburgerNav = hamburgerRoot.querySelector('.hamburger-nav');
 
-      // Функция для переключения меню
-      function toggleHamburgerMenu() {
-          hamburgerNav.classList.toggle('active');
-      }
+		if (!hamburgerIcon || !hamburgerNav) {
+			console.error('Hamburger elements not found');
+			return;
+		}
 
-      // Добавляем обработчик события на иконку
-      hamburgerIcon.addEventListener('click', function (e) {
-          e.preventDefault();
-          toggleHamburgerMenu();
-      });
+    function toggleHamburgerMenu() {
+        console.log('Toggling hamburger menu'); // Лог для отладки
+        hamburgerNav.classList.toggle('active');
+        hamburgerIcon.classList.toggle('active'); // Добавляем/удаляем класс active для иконки
+    }
 
-      // Закрытие меню при клике вне его
-      document.addEventListener('click', function (e) {
-          if (!e.target.closest('.hamburger')) {
-              hamburgerNav.classList.remove('active');
-          }
-      });
+    // Обработчики для click и touchstart
+		['click', 'touchstart'].forEach(event => {
+        hamburgerIcon.addEventListener(event, (e) => {
+				e.preventDefault();
+				e.stopPropagation();
+            console.log(`${event} event triggered on hamburger icon`); // Лог для отладки
+            toggleHamburgerMenu();
+        });
+    });
 
-      // Закрытие меню при клике на ссылки внутри меню
-      const navLinks = hamburgerNav.querySelectorAll('.nav-button');
-      navLinks.forEach(link => {
-          link.addEventListener('click', function () {
-              hamburgerNav.classList.remove('active');
-          });
-      });
+    // Закрытие меню при клике вне его
+    document.addEventListener('click', (e) => {
+        // Исключаем клики по элементам карусели и другим интерактивным элементам
+        if (!e.target.closest('.hamburger') && 
+            !e.target.closest('.hamburger-nav') &&
+            !e.target.closest('.carousel-btn') &&
+            !e.target.closest('.carousel-container') &&
+            !e.target.closest('.dot')) {
+            console.log('Click outside hamburger, closing menu'); // Лог для отладки
+            hamburgerNav.classList.remove('active');
+            hamburgerIcon.classList.remove('active');
+        }
+    });
 
-      console.log('Hamburger menu initialized successfully');
-  }, 100);
+    // Закрытие меню при клике на ссылки внутри меню
+		const navLinks = hamburgerNav.querySelectorAll('.nav-button');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            console.log('Nav link clicked, closing menu'); // Лог для отладки
+            hamburgerNav.classList.remove('active');
+            hamburgerIcon.classList.remove('active');
+        });
+    });
+
+    console.log('Hamburger menu initialized successfully');
+		hamburgerRoot.dataset.hamburgerInited = '1';
 }
-
-function includeHTML(id, url, callback) {
-  fetch(url)
-      .then(response => response.text())
-      .then(data => {
-          document.getElementById(id).innerHTML = data;
-          if (typeof callback === 'function') {
-              callback();
-          }
-      })
-      .catch(error => {
-          console.error('Ошибка загрузки HTML:', error);
-      });
-}
-
-// Удален немедленный вызов initHamburgerMenu(); инициализируем из includeHTML колбэка
+// Инициализация происходит из scripts/script.js после includeHTML('header', ...)

@@ -1,7 +1,4 @@
 
-p{
-    margin: 0 !important;
-}
 .US{
     width: 100%;
     height: auto;
@@ -35,7 +32,7 @@ p{
     display: flex;
     padding: 60px 0 60px 0;
     flex-direction: column;
-    gap: 75px;
+    gap: 25px;
 }
 .spis a {
     color: #DC3E48;
@@ -111,7 +108,7 @@ p{
 }
 .Bloc-2 li{
     font-size: 20px;
-    line-height: 3;
+    line-height: 2;
 }
 .Kalen{
     display: flex;
@@ -447,7 +444,11 @@ textarea::placeholder{
 
 .docs-copr-plash {
     width: 100%;
-    background-color: #DC3E48;
+    background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.788)), url(../public/photo-docs.svg);
+    background-size: cover;
+    background-position:20% 70%;
+    min-height: 400px;
+    align-items: end;
     border-radius: 16px;
     display: flex;
     gap: 40px;
@@ -458,14 +459,11 @@ textarea::placeholder{
 .docs-copr-plash p {
     font-size: 24px;
     font-weight: 600;
-    letter-spacing: -2%;
-    line-height: 160%;
     color: rgb(255, 255, 255);
 }
 
 .docs-copr-plash-1 {
     display: flex;
-    min-width: 613px;
     flex-direction: column;
     align-items: flex-start;
 }
@@ -542,11 +540,33 @@ textarea::placeholder{
     font-size: 16px;
     font-weight: 600;
 }
+@media (max-width: 1620px) {
+    .nov-img{
+        width: 100%;
+    }
+}
+@media (max-width: 1320px) {
+    .Bloc-1{
+        max-height: 750px;
+        padding: 0 0 0 0;
+        gap: 15px;
+    }
+    .Bloc-1 img{
+        width: 100%;
+    }
+    .Bloc-1 p{
+        min-width: 100%;
+        padding: 10px 15px 0 15px;
+    }
+}
 
 @media screen and (max-width: 990px) {
     .docs-copr {
         padding: 35px 25px;
         gap: 40px;
+    }
+    .docs-copr-plash p{
+        font-size: 18px;
     }
 
     .start-h h1 {
@@ -558,9 +578,6 @@ textarea::placeholder{
         padding: 14px;
     }
 
-    .docs-copr-plash p {
-        font-size: 22px;
-    }
 
     .docs-copr-plash2 {
         padding: 14px;
@@ -601,6 +618,48 @@ textarea::placeholder{
         color: #ffffff;
         font-size: 20px;
     }
+    .test {
+        padding: 40px 50px;
+    }
+
+    .red-plash {
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .text-1-1 {
+        font-size: 26px;
+    }
+
+    .text-1-2 {
+        font-size: 13px;
+    }
+
+    .polaya {
+        font-size: 14px;
+        padding: 14px 20px;
+        gap: 14px;
+    }
+
+
+    ::placeholder,
+    .polaya {
+        font-size: 14px;
+    }
+
+    .button-1 {
+        padding: 10px 22px;
+        gap: 10px;
+    }
+
+    .button-1 p {
+        font-size: 14px;
+    }
+}
+@media (max-width: 900px) {
+    .US{
+        padding: 0 20px 0 20px;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -619,7 +678,7 @@ textarea::placeholder{
     }
 
     .docs-copr-plash p {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .docs-copr-plash2 {
@@ -661,7 +720,77 @@ textarea::placeholder{
         color: #ffffff;
         font-size: 16px;
     }
+    .test {
+        padding: 30px 40px;
+    }
 
+    .red-plash {
+        padding: 14px;
+        gap: 14px;
+    }
+
+    .text-1-1 {
+        font-size: 24px;
+    }
+
+    .text-1-2 {
+        font-size: 11px;
+    }
+
+    .polaya {
+        font-size: 12px;
+        padding: 12px 18px;
+        gap: 12px;
+    }
+
+
+    ::placeholder,
+    .polaya {
+        font-size: 12px;
+    }
+
+    .button-1 {
+        padding: 8px 22px;
+        gap: 8px;
+    }
+
+    .button-1 p {
+        font-size: 12px;
+    }
+
+}
+@media (max-width: 650px) {
+    .Bloc-1{
+        max-height: 850px;
+    }
+    .Bloc-2{
+        gap: 15px;
+    }
+    .Bloc-2 li{
+        line-height: 1.5;
+    }
+    .data{
+        width: 30%;
+    }
+    .spis-item{
+        min-width: max-content;
+        width: auto;
+    }
+    .us-content{
+        gap: 45px;
+    }
+    .us-content p{
+        font-size: 14px;
+    }
+    .us-content li{
+        font-size: 18px;
+    }
+    .K p{
+        font-size: 16px;
+    }
+    .us-content h1{
+        font-size: 22px;
+    }
 }
 
 @media screen and (max-width: 575px) {
@@ -680,7 +809,7 @@ textarea::placeholder{
     }
 
     .docs-copr-plash p {
-        font-size: 18px;
+        font-size: 14px;
     }
 
     .docs-copr-plash2 {
@@ -721,6 +850,48 @@ textarea::placeholder{
     .watch-all a {
         color: #ffffff;
         font-size: 14px;
+    }
+    .test {
+        padding: 20px 30px;
+    }
+
+    .red-plash {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .text-1-1 {
+        font-size: 22px;
+    }
+
+    .text-1-2 {
+        font-size: 9px;
+    }
+
+    .polaya {
+        font-size: 10px;
+        padding: 10px 16px;
+        gap: 10px;
+    }
+
+
+    ::placeholder,
+    .polaya {
+        font-size: 10px;
+    }
+
+    .button-1 {
+        padding: 6px 20px;
+        gap: 6px;
+    }
+
+    .button-1 p {
+        font-size: 10px;
+    }
+}
+@media (max-width: 400px) {
+    .Bloc-1{
+        max-height: 950px;
     }
 }
 
@@ -814,185 +985,3 @@ textarea::placeholder{
     text-decoration: none;
 }
 
-@media screen and (max-width: 990px) {
-    .test {
-        padding: 40px 50px;
-    }
-
-    .red-plash {
-        padding: 16px;
-        gap: 16px;
-    }
-
-    .text-1-1 {
-        font-size: 26px;
-    }
-
-    .text-1-2 {
-        font-size: 13px;
-    }
-
-    .polaya {
-        font-size: 14px;
-        padding: 14px 20px;
-        gap: 14px;
-    }
-
-
-    ::placeholder,
-    .polaya {
-        font-size: 14px;
-    }
-
-    .button-1 {
-        padding: 10px 22px;
-        gap: 10px;
-    }
-
-    .button-1 p {
-        font-size: 14px;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .test {
-        padding: 30px 40px;
-    }
-
-    .red-plash {
-        padding: 14px;
-        gap: 14px;
-    }
-
-    .text-1-1 {
-        font-size: 24px;
-    }
-
-    .text-1-2 {
-        font-size: 11px;
-    }
-
-    .polaya {
-        font-size: 12px;
-        padding: 12px 18px;
-        gap: 12px;
-    }
-
-
-    ::placeholder,
-    .polaya {
-        font-size: 12px;
-    }
-
-    .button-1 {
-        padding: 8px 22px;
-        gap: 8px;
-    }
-
-    .button-1 p {
-        font-size: 12px;
-    }
-}
-
-@media screen and (max-width: 575px) {
-    .test {
-        padding: 20px 30px;
-    }
-
-    .red-plash {
-        padding: 12px;
-        gap: 12px;
-    }
-
-    .text-1-1 {
-        font-size: 22px;
-    }
-
-    .text-1-2 {
-        font-size: 9px;
-    }
-
-    .polaya {
-        font-size: 10px;
-        padding: 10px 16px;
-        gap: 10px;
-    }
-
-
-    ::placeholder,
-    .polaya {
-        font-size: 10px;
-    }
-
-    .button-1 {
-        padding: 6px 20px;
-        gap: 6px;
-    }
-
-    .button-1 p {
-        font-size: 10px;
-    }
-}
-
-@media (max-width: 1320px) {
-    .Bloc-1{
-        max-height: 750px;
-        padding: 0 0 0 0;
-        gap: 15px;
-    }
-    .Bloc-1 img{
-        width: 100%;
-    }
-    .Bloc-1 p{
-        min-width: 100%;
-        padding: 10px 15px 0 15px;
-    }
-}
-@media (max-width: 650px) {
-    .Bloc-1{
-        max-height: 850px;
-    }
-    .Bloc-2{
-        gap: 15px;
-    }
-    .Bloc-2 li{
-        line-height: 1.5;
-    }
-    .data{
-        width: 30%;
-    }
-    .spis-item{
-        min-width: max-content;
-        width: auto;
-    }
-    .us-content{
-        gap: 45px;
-    }
-    .us-content p{
-        font-size: 18px;
-    }
-    .us-content li{
-        font-size: 18px;
-    }
-    .K p{
-        font-size: 16px;
-    }
-    .us-content h1{
-        font-size: 22px;
-    }
-}
-@media (max-width: 400px) {
-    .Bloc-1{
-        max-height: 950px;
-    }
-}
-@media (max-width: 1620px) {
-    .nov-img{
-        width: 100%;
-    }
-}
-@media (max-width: 900px) {
-    .US{
-        padding: 0 20px 0 20px;
-    }
-}

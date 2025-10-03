@@ -22,7 +22,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 160%;
     letter-spacing: -3%;
     text-align: right;
@@ -81,13 +81,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 50px;
 }
 
 .nav-button {
-
     font-weight: 600;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 100%;
     letter-spacing: -2%;
     color: rgba(47, 43, 54, 1);
@@ -105,8 +104,8 @@
 }
 
 .nav-button img.arrow-down {
-    width: 12px;
-    height: 5px;
+    width: 14px;
+    height: 6px;
 }
 
 
@@ -115,9 +114,14 @@
     height: 18px;
 }
 
-.search-button img.search-icon {
-    width: 18px;
-    height: 18px;
+.search-icon {
+    width: 22px;
+    height: 22px;
+}
+
+.tg-img,
+.vk-img {
+    width: 45px;
 }
 
 .Pois {
@@ -143,14 +147,14 @@
 }
 
 .vod.active {
-    display: inline-flex; 
+    display: inline-flex;
 }
 
 .vod button {
-    background:none; 
-    border:none; 
-    font-size:20px; 
-    cursor:pointer;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
     position: relative;
     display: flex;
     align-items: center;
@@ -179,42 +183,33 @@
     border-radius: 10px;
 }
 
+.logo {
+    width: 250px;
+}
+
 .hamburger {
     display: none;
 }
 
 .hamburger img {
-    width: 24px;
-    height: 24px;
-    transition: transform 0.3s ease;
-}
-
-.hamburger img.active {
-    transform: rotate(90deg);
+    width: 26px;
 }
 
 .hamburger-nav {
     position: absolute;
-    top: 100%;
+    top: 140%;
     right: 0;
     background: white;
     min-width: 280px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
     padding: 10px 0;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-10px);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1000;
     flex-direction: column;
     gap: 0;
-}
-
-.hamburger-nav.active {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+    -webkit-transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hamburger-nav .nav-button {
@@ -225,8 +220,6 @@
     transition: background-color 0.2s ease;
 }
 
-
-
 .hamburger-nav .nav-button:last-child {
     border-bottom: none;
 }
@@ -235,12 +228,30 @@
     margin-left: auto;
 }
 
-/* Адаптивность для очень больших экранов */
-@media (min-width: 1440px) {
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
 
+.hamburger img {
+    width: 24px;
+    height: 24px;
+}
 
+.hamburger-nav.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+}
+
+@media (max-width: 1440px) {
     .contact {
-        font-size: 16px;
+        font-size: 14px;
+    }
+
+    .nav-button {
+        font-size: 14px;
     }
 
     .search-button img.search-icon {
@@ -248,19 +259,45 @@
         height: 22px;
     }
 
+    .tg-img,
+    .vk-img {
+        width: 40px;
+    }
+
+    .logo {
+        width: 210px;
+    }
 }
 
-/* Адаптивность для планшетов */
-@media (min-width: 768px) and (max-width: 1199px) {
+@media screen and (max-width: 1320px) {
+    .nav-buttons {
+        display: none;
+    }
 
+    .hamburger {
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
 
+    .nav-buttons {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (max-width: 1199px) {
     .contact {
         font-size: 12px;
     }
 
     .logo {
         width: 250px;
-        height: 32px;
     }
 
     .nav-buttons {
@@ -289,7 +326,9 @@
         height: 16px;
     }
 
-
+    .hamburger-nav {
+        min-width: 300px;
+    }
 }
 
 @media (max-width: 810px) {
@@ -298,15 +337,8 @@
     }
 }
 
-@media (max-width: 600px) {
-    .vod {
-        padding: 0 0 0 0;
-    }
-}
 
-/* Адаптивность для мобильных устройств */
 @media (max-width: 767px) {
-
     .icons img {
         width: 22px;
         height: 22px;
@@ -316,6 +348,9 @@
         font-size: 10px;
     }
 
+    .header-second {
+        padding: 8px 16px;
+    }
     .logo {
         width: 200px;
         height: 26px;
@@ -334,6 +369,7 @@
     }
 
     .nav-button {
+        font-size: 11px;
         text-align: center;
     }
 
@@ -358,10 +394,18 @@
         position: relative;
     }
 
-
+    .header img {
+        width: 32px;
+        height: 32px;
+    }
 }
 
-/* Адаптивность для очень маленьких экранов */
+@media (max-width: 600px) {
+    .vod {
+        padding: 0 0 0 0;
+    }
+}
+
 @media (max-width: 480px) {
     :root {
         --slide-scale: 0.44;
@@ -371,16 +415,14 @@
         --arrow-scale: 0.47;
     }
 
-
     .header-second {
         gap: 12px;
         display: flex;
-
+        padding: 20px 10px;
     }
 
     .icons img {
-        width: 18px;
-        height: 18px;
+        width: 21px;
     }
 
     .contact {
@@ -389,8 +431,7 @@
 
     .logo {
         position: relative;
-        width: 100px;
-        height: 23px;
+        width: 146px;
     }
 
     .nav-button {
@@ -398,51 +439,19 @@
         padding: 4px 2px;
     }
 
-
-}
-
-@media screen and (max-width: 1320px) {
-    .nav-buttons {
-        display: none;
+    .tex {
+        font-size: 14px;
+        font-weight: 600;
+        padding: 5px 0 0 5px;
     }
 
-    .hamburger {
-    position: relative;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    }
-}
-
-@media (max-width: 480px) {
     .hamburger-nav {
-        min-width: 240px;
-        right: -20px;
+        min-width: 300px;
+        right: -32px;
     }
 
     .hamburger-nav .nav-button {
         padding: 10px 16px;
         font-size: 14px;
-    }
-}
-
-/* Адаптивность для планшетов */
-@media (min-width: 768px) and (max-width: 1199px) {
-    .hamburger-nav {
-        min-width: 300px;
-    }
-}
-@media (max-width: 700px) {
-    .hamburger-nav {
-      left: 50% !important;
-      right: auto !important;
-      transform: translate(-80%, 10px) !important;
-
-    }
-  }
-@media (max-width: 767px) {
-    .header img{
-        width: 32px;
-        height: 32px;
     }
 }
