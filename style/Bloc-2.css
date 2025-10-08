@@ -96,6 +96,14 @@
     flex-direction: column;
 }
 
+.project-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+
 .project-text {
     font-size: 18px;
     font-weight: 600;

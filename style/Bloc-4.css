@@ -10,7 +10,6 @@
 
 .red-plash {
     width: 100%;
-    max-width: 326px;
     min-height: 391px;
     display: flex;
     flex-direction: column;
@@ -23,7 +22,6 @@
 
 .red-plash-1 {
     width: 100%;
-    max-width: 981px;
     min-height: 391px;
     display: flex;
     flex-direction: column;
@@ -82,7 +80,6 @@
 
 .polaya-1 {
     resize: none;
-    width: 954px;
     min-height: 226px;
     display: flex;
     border-radius: 16px;
@@ -103,7 +100,7 @@
 }
 
 .button-1 {
-    width: 294px;
+    width:100%;
     min-height: 42px;
     display: flex;
     align-items: center;
@@ -127,7 +124,6 @@
 }
 
 .button-1-2 {
-    width: 954px;
     min-height: 42px;
     display: flex;
     align-items: center;
@@ -158,17 +154,17 @@
 /* Медиа-запрос для экранов с высоким разрешением (1200px и выше) */
 @media (min-width: 1200px) {
     .red-plash {
-        max-width: 400px;
+        max-width: 515px;
         min-height: 450px;
     }
 
     .red-plash-1 {
-        min-height: 470px;
+        min-height: 456px;
     }
 
 
     .polaya {
-        width: 360px;
+        width: 100%;
         min-height: 48px;
     }
 
@@ -181,7 +177,6 @@
     }
 
     .button-1 {
-        width: 360px;
         min-height: 48px;
     }
 
@@ -217,7 +212,6 @@
     }
 
     .red-plash {
-        max-width: 280px;
         min-height: 510px;
     }
 
@@ -234,7 +228,7 @@
 
     .polaya {
         width: 100%;
-        min-height: 40px;
+        min-height: 48px;
     }
 
     .red-plash .polaya:nth-child(5) {
@@ -277,12 +271,10 @@
     }
 
     .red-plash {
-        max-width: 300px;
         min-height: 350px;
     }
 
     .red-plash-1 {
-        max-width: 600px;
         min-height: 350px;
     }
 

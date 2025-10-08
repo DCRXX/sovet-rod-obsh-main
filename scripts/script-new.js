@@ -46,7 +46,7 @@ const API_CONFIG = {
         banners: '/banners/',
         projects: '/projects',
         news: '/news',
-        feedbacks: '/feedbacks'
+        documents: '/documents'
     },
     timeout: 5000 // 10 секунд
 };
@@ -113,7 +113,10 @@ function showConnectionError() {
 
 // Общая функция для API запросов
 async function makeApiRequest(endpoint, options = {}) {
-    const url = `${API_CONFIG.baseUrl}${endpoint}`;
+    // Support absolute endpoints (full URLs) or relative endpoints appended to baseUrl
+    const url = (typeof endpoint === 'string' && (endpoint.startsWith('http://') || endpoint.startsWith('https://')))
+        ? endpoint
+        : `${API_CONFIG.baseUrl}${endpoint}`;
     console.log(`📡 Запрос к: ${url}`);
     
     try {
@@ -124,17 +127,31 @@ async function makeApiRequest(endpoint, options = {}) {
                 ...options.headers
             }
         });
-        
-        if (!response.ok) {
-            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+
+        // Попытаемся прочитать тело ответа как текст
+        const rawText = await response.text();
+        let parsed = null;
+        try {
+            parsed = rawText ? JSON.parse(rawText) : null;
+        } catch (e) {
+            parsed = rawText || null;
         }
-        
-        const data = await response.json();
+
+        if (!response.ok) {
+            const err = new Error(`HTTP ${response.status}: ${response.statusText}`);
+            err.status = response.status;
+            err.response = parsed;
+            console.error(`❌ Ошибка запроса к ${url}:`, err.message, parsed);
+            throw err;
+        }
+
+        const data = parsed;
         console.log(`✅ Данные получены: ${Array.isArray(data) ? data.length + ' элементов' : 'объект'}`);
         return data;
-        
+
     } catch (error) {
-        console.error(`❌ Ошибка запроса к ${url}:`, error.message);
+        // Если ошибка была выброшена выше, она уже логирована — повторно логируем для уверенности
+        console.error(`❌ Ошибка запроса к ${url}:`, error.message, error.response ? error.response : '');
         throw error;
     }
 }
@@ -144,9 +161,215 @@ function safeText(text, fallback = '') {
     return text && text.trim() ? text.trim() : fallback;
 }
 
+// Храним текущий poll id после загрузки
+let currentPollId = null;
+
+// Загружает опросы и устанавливает текст в .text-1-1-2
+async function loadPollPrompt() {
+    try {
+        const polls = await makeApiRequest('https://terlynedev.space/api/polls/', { method: 'GET' });
+        if (!polls) return;
+
+        // polls может быть массивом или объектом; выберем первый активный
+        let poll = null;
+        if (Array.isArray(polls)) {
+            poll = polls.find(p => p.is_active === true) || polls[0] || null;
+        } else if (typeof polls === 'object') {
+            // Если сервер вернул объект с полем results
+            if (Array.isArray(polls.results) && polls.results.length) {
+                poll = polls.results.find(p => p.is_active === true) || polls.results[0];
+            } else {
+                poll = polls;
+            }
+        }
+
+        if (!poll) return;
+
+        // Попытка найти поле темы
+        const theme = safeText(poll.theme || poll.title || poll.name || poll.question || '');
+        currentPollId = poll.id || poll.pk || poll.poll_id || poll._id || null;
+
+        const el = document.querySelector('.text-1-1-2');
+        if (el) {
+            el.textContent = `Пройди опрос на тему: ${theme}`;
+        }
+    } catch (err) {
+        console.warn('⚠️ Не удалось загрузить данные опроса:', err);
+    }
+}
+
 // ========================================
 // ФУНКЦИИ ЗАГРУЗКИ ДАННЫХ
 // ========================================
+
+// Загрузка документов
+async function loadDocuments() {
+    console.log('📚 Загружаем документы...');
+
+    try {
+        const documents = await makeApiRequest(API_CONFIG.endpoints.documents);
+
+        if (!Array.isArray(documents)) {
+            console.warn('⚠️ Ожидался массив документов, получено:', documents);
+            return;
+        }
+
+        // Найдём секцию с документами
+        const docsSection = document.querySelector('[data-content="docs"]');
+        if (!docsSection) {
+            console.warn('⚠️ Секция документов (data-content="docs") не найдена');
+            return;
+        }
+
+        // Внутри секции обычно есть .cved, а в нём .docs-copr-plash2
+        const cved = docsSection.querySelector('.cved') || docsSection;
+        let docsList = cved.querySelector('.docs-copr-plash2');
+        if (!docsList) {
+            // Если контейнера нет, создаём его и вставляем внутрь .cved
+            docsList = document.createElement('div');
+            docsList.className = 'docs-copr-plash2';
+            cved.appendChild(docsList);
+        }
+
+        // Очистим текущие статические элементы — заменим их результатами API
+        docsList.innerHTML = '';
+
+        documents.forEach((doc, idx) => {
+            const id = doc.id || doc._id || `doc-${idx}`;
+            const title = safeText(doc.title || doc.name || doc.filename || `Документ ${idx + 1}`);
+            const filePath = doc.file_url || doc.file || doc.path || doc.document_url || doc.url || doc.image_url;
+            let fileUrl = '#';
+            if (filePath) {
+                fileUrl = String(filePath).startsWith('http') ? filePath : `${API_CONFIG.filesPath}${filePath}`;
+            }
+
+            // Создаём структуру, соответствующую существующей разметке
+            const a = document.createElement('a');
+            a.href = fileUrl;
+            a.target = '_blank';
+            a.rel = 'noopener';
+
+            const card = document.createElement('div');
+            card.className = 'docs-copr-plash-3';
+
+            card.innerHTML = `
+                <p>${title}</p>
+                <div class="after-img">
+                    <img src="./public/docs-2.svg" alt="">
+                </div>
+            `;
+
+            // Вставляем и даём возможность обработать клик, если нужно дополнительное поведение
+            a.appendChild(card);
+            docsList.appendChild(a);
+        });
+
+        console.log(`✅ Документов загружено и отрендерено: ${documents.length}`);
+    } catch (error) {
+        console.error('❌ Ошибка загрузки документов:', error.message);
+    }
+}
+
+// Привязка обработчиков для секции тест (red-plash и red-plash-1)
+function attachTestFormHandlers() {
+    // feedback (red-plash) -> POST /feedbacks
+    const red = document.querySelector('.red-plash');
+    if (red) {
+        const inputs = red.querySelectorAll('input.polaya');
+        const textarea = red.querySelector('textarea.polaya');
+        const btn = red.querySelector('.button-1');
+
+        if (btn) {
+            btn.addEventListener('click', async (e) => {
+                e.preventDefault();
+                const name = inputs[0] ? inputs[0].value.trim() : '';
+                const phone = inputs[1] ? inputs[1].value.trim() : '';
+                const email = inputs[2] ? inputs[2].value.trim() : '';
+                const message = textarea ? textarea.value.trim() : '';
+
+                const payload = {
+                    name,
+                    phone,
+                    email,
+                    message,
+                    source: 'index_red_plash'
+                };
+
+                try {
+                    btn.classList.add('disabled');
+                    btn.querySelector && (btn.querySelector('p') ? btn.querySelector('p').textContent = 'Отправляю...' : null);
+                    await makeApiRequest('/feedbacks', {
+                        method: 'POST',
+                        body: JSON.stringify(payload)
+                    });
+                    console.log('✅ Feedback отправлен');
+                    // небольшой визуальный отклик
+                    if (btn.querySelector && btn.querySelector('p')) btn.querySelector('p').textContent = 'Отправлено';
+                    setTimeout(() => {
+                        if (btn.querySelector && btn.querySelector('p')) btn.querySelector('p').textContent = 'Отправить';
+                        btn.classList.remove('disabled');
+                    }, 2500);
+                } catch (err) {
+                    const formatted = formatApiError(err.response);
+                    console.error('❌ Ошибка отправки feedback:', err, err.response ? err.response : '');
+                    alert('Ошибка отправки.' + (formatted ? '\n' + formatted : '\nПопробуйте позже.'));
+                    btn.classList.remove('disabled');
+                    if (btn.querySelector && btn.querySelector('p')) btn.querySelector('p').textContent = 'Отправить';
+                }
+            });
+        }
+    }
+
+    // poll (red-plash-1) -> POST /polls (assume poll_id = 2 as requested)
+    const red1 = document.querySelector('.red-plash-1');
+    if (red1) {
+        const textarea = red1.querySelector('textarea.polaya-1');
+        const btn = red1.querySelector('.button-1-2');
+
+        if (btn) {
+            btn.addEventListener('click', async (e) => {
+                e.preventDefault();
+                const answer = textarea ? textarea.value.trim() : '';
+                if (!answer) {
+                    alert('Пожалуйста, введите ответ');
+                    return;
+                }
+
+                // Отправляем ответ на конкретный poll: POST https://terlynedev.space/api/polls/{poll_id}/answer/
+                if (!currentPollId) {
+                    alert('Опрос не загружен. Попробуйте обновить страницу.');
+                    return;
+                }
+
+                const answerUrl = `https://terlynedev.space/api/polls/${encodeURIComponent(currentPollId)}/answers/`;
+
+                try {
+                    btn.classList.add('disabled');
+                    btn.querySelector && (btn.querySelector('p') ? btn.querySelector('p').textContent = 'Отправляю...' : null);
+                    await makeApiRequest(answerUrl, {
+                        method: 'POST',
+                        body: JSON.stringify({ answer_text: answer })
+                    });
+                    console.log('✅ Poll ответ отправлен');
+                    if (btn.querySelector && btn.querySelector('p')) btn.querySelector('p').textContent = 'Отправлено';
+                    setTimeout(() => {
+                        if (btn.querySelector && btn.querySelector('p')) btn.querySelector('p').textContent = 'Отправить';
+                        btn.classList.remove('disabled');
+                        if (textarea) textarea.value = '';
+                    }, 2500);
+                } catch (err) {
+                    const formatted = formatApiError(err.response);
+                    console.error('❌ Ошибка отправки poll:', err, err.response ? err.response : '');
+                    alert('Ошибка отправки.' + (formatted ? '\n' + formatted : '\nПопробуйте позже.'));
+                    btn.classList.remove('disabled');
+                    if (btn.querySelector && btn.querySelector('p')) btn.querySelector('p').textContent = 'Отправить';
+                }
+            });
+        }
+    }
+}
+
+
 
 // Загрузка баннеров
 async function loadBanners() {
@@ -257,9 +480,9 @@ async function loadProjects() {
 // Создание карточки проекта
 function createProjectCard(project, container) {
     const title = safeText(project.title, 'Проект без названия');
-    const body = safeText(project.body, 'Описание отсутствует');
-    const url = safeText(project.redirect_url, '#');
-    const shortText = body.length > 100 ? body.substring(0, 100) + '...' : body;
+    const min_text = safeText(project.min_text, 'Описание отсутствует');
+    const project_url = safeText(project.project_url, '#');
+    const shortText = min_text.length > 100 ? min_text.substring(0, 100) + '...' : min_text;
     const card = document.createElement('div');
     card.className = 'project-card';
 
@@ -275,13 +498,13 @@ function createProjectCard(project, container) {
     card.style.backgroundRepeat = 'no-repeat';
 
     card.innerHTML = `
-        <div class="project-card-content">
+        <div class="project-card-content" >
             <p class="project-title">${title}</p>
             <div class="project-card-down">
-                <p class="project-text" data-full-text="${body}" onclick="toggleText(this)">
-                    ${shortText}
+                <p class="project-text" data-full-text="${min_text}" onclick="toggleText(this)">
+                    ${min_text}
                 </p>
-                <a href="${url}" class="project-body-button">
+                <a href="${project_url}" class="project-body-button">
                     <p>Подробнее</p>
                 </a>
             </div>
@@ -320,7 +543,7 @@ async function loadNews() {
 function createNewsCard(newsItem, container) {
     const title = safeText(newsItem.title, 'Новость без заголовка');
     const fullText = safeText(newsItem.min_text, 'Описание отсутствует');
-    const url = safeText(newsItem.redirect_url, '#');
+    const news_url = safeText(newsItem.news_url, '#');
     const date = newsItem.news_date ? 
         new Date(newsItem.news_date).toLocaleDateString() : 
         'Дата не указана';
@@ -337,7 +560,7 @@ function createNewsCard(newsItem, container) {
             <h2>${title}</h2>
             <p class="p2" data-full-text="${fullText}" onclick="toggleText(this)">${shortText}</p>
         </div>
-        <a href="${url}" class="button-nov">
+        <a href="${news_url}" class="button-nov">
             <button>
                 <p class="p1">Читать полностью</p>
             </button>
@@ -347,33 +570,7 @@ function createNewsCard(newsItem, container) {
     container.appendChild(card);
 }
 
-// Отправка обратной связи
-function submitFeedback() {
-    const formData = {
-        first_name: document.getElementById('fb-firstname')?.value || '',
-        middle_name: document.getElementById('fb-middlename')?.value || '',
-        last_name: document.getElementById('fb-lastname')?.value || '',
-        email: document.getElementById('fb-email')?.value || '',
-        message: document.getElementById('fb-message')?.value || ''
-    };
-    
-    makeApiRequest(API_CONFIG.endpoints.feedbacks, {
-        method: 'POST',
-        body: JSON.stringify(formData)
-    })
-    .then(() => {
-        alert('Спасибо за ваш отзыв!');
-        // Очистка формы
-        Object.keys(formData).forEach(key => {
-            const element = document.getElementById(`fb-${key.replace('_', '')}`);
-            if (element) element.value = '';
-        });
-    })
-    .catch(error => {
-        console.error('❌ Ошибка отправки формы:', error.message);
-        alert('Произошла ошибка при отправке. Попробуйте позже.');
-    });
-}
+
 
 // ========================================
 // ЗАГРУЗКА HTML КОМПОНЕНТОВ
@@ -403,6 +600,18 @@ async function initApp() {
     includeHTML('footer', 'footer.html', () => {
         if (typeof initUpButton === 'function') initUpButton();
     });
+
+    // Привязываем обработчики тестовой секции (если элементы уже в DOM)
+    // Небольшая задержка чтобы includeHTML успел вставить содержимое
+    setTimeout(() => {
+        try {
+            attachTestFormHandlers();
+            // попытка заранее загрузить информацию об опросе
+            loadPollPrompt();
+        } catch (err) {
+            console.warn('⚠️ Ошибка при привязке обработчиков тестовой секции:', err);
+        }
+    }, 200);
     
     // Проверяем подключение к API
     const isConnected = await checkApiConnection();
@@ -419,7 +628,8 @@ async function initApp() {
             await Promise.all([
                 loadBanners(),
                 loadProjects(),
-                loadNews()
+                loadNews(),
+                loadDocuments()
             ]);
             console.log('🎉 Все данные загружены успешно!');
         } catch (error) {

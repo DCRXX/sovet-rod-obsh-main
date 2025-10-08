@@ -70,6 +70,14 @@
     <div id="news-preview"></div>
     </div>
 
+    <div class="test-section">
+        <h2>4. Тест API документов</h2>
+        <button onclick="testDocumentsAPI()">Тестировать API документов</button>
+        <div id="docs-status"></div>
+        <div id="docs-data"></div>
+        <div id="docs-preview"></div>
+    </div>
+
     <script>
         // Функция для отображения статуса
         function showStatus(elementId, message, type) {
@@ -172,8 +180,8 @@
                                     <div>
                                         <p><strong>🆔 ID:</strong> <code>${project.id || 'Не указан'}</code></p>
                                         <p><strong>📝 Заголовок:</strong> ${project.title || 'Не указан'}</p>
-                                        <p><strong>📄 Описание:</strong> ${project.body || 'Не указано'}</p>
-                                        <p><strong>🔗 Ссылка:</strong> ${project.redirect_url || 'Не указана'}</p>
+                                        <p><strong>📄 Описание:</strong> ${project.min_text || 'Не указано'}</p>
+                                        <p><strong>🔗 Ссылка:</strong> ${project.project_url || 'Не указана'}</p>
                                     </div>
                                     <div>
                                         <p><strong>🖼️ Путь к изображению:</strong><br><code>${project.image_url || 'Не указан'}</code></p>
@@ -242,6 +250,58 @@
                 console.error('Ошибка загрузки новостей:', error);
             }
         }
+
+            // Тест API документов
+            async function testDocumentsAPI() {
+                showStatus('docs-status', 'Загрузка...', 'loading');
+                document.getElementById('docs-data').innerHTML = '';
+                document.getElementById('docs-preview').innerHTML = '';
+
+                try {
+                    const response = await fetch('https://terlynedev.space/api/documents');
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                    }
+                    const data = await response.json();
+                    showStatus('docs-status', `Успешно загружено ${data.length} документов`, 'success');
+                    showData('docs-data', data);
+
+                    if (data && data.length > 0) {
+                        const previewHtml = data.map((doc, index) => {
+                            const filePath = doc.file || doc.file_url || doc.path || doc.url || doc.document_url || doc.image_url || '';
+                            const fileUrl = filePath ? (String(filePath).startsWith('http') ? filePath : `https://terlynedev.space/api/files/${filePath}`) : '';
+                            return `
+                                <div style="border: 1px solid #ddd; padding: 15px; margin: 10px 0; border-radius: 5px;">
+                                    <h4>Документ ${index + 1}</h4>
+                                    <p><strong>📝 Заголовок:</strong> ${doc.title || doc.name || 'Не указан'}</p>
+                                    <p><strong>🆔 ID:</strong> <code>${doc.id || 'Не указан'}</code></p>
+                                    <p><strong>🌐 Путь к файлу:</strong> <code>${filePath || 'Не указан'}</code></p>
+                                    ${fileUrl ? `<div style="margin-top:10px;"><a href="#" onclick='openDocument(${JSON.stringify(fileUrl)}); return false;'>Открыть</a></div>` : '<p style="color:orange;">⚠️ Файл не указан</p>'}
+                                </div>
+                            `;
+                        }).join('');
+
+                        document.getElementById('docs-preview').innerHTML = `<h3>Превью документов:</h3>${previewHtml}`;
+                    }
+                } catch (error) {
+                    showStatus('docs-status', `Ошибка: ${error.message}`, 'error');
+                    console.error('Ошибка загрузки документов:', error);
+                }
+            }
+
+            // Открывает документ в новой вкладке напрямую (без внешних просмотрщиков)
+            function openDocument(url) {
+                if (!url) {
+                    alert('URL файла не указан');
+                    return;
+                }
+                try {
+                    window.open(url, '_blank', 'noopener');
+                } catch (err) {
+                    console.error('Ошибка при открытии документа:', err);
+                    window.open(url, '_blank', 'noopener');
+                }
+            }
     </script>
 </body>
 </html>
