@@ -5,6 +5,8 @@
     width: 100%;
     padding: 45px 50px;
     display: flex;
+    align-items: center;
+    max-width: 2200px;
     flex-direction: column;
     gap: 45px;
 }
@@ -14,6 +16,7 @@
     font-weight: 700;
     line-height: 110%;
     letter-spacing: -2%;
+    width: 100%;
 }
 
 
@@ -35,6 +38,7 @@
     justify-content: center;
     align-items: center;
     gap: 30px;
+    width: 100%;
     
 }
 
@@ -97,7 +101,20 @@
     padding: 16px;
     border-radius: 16px;
 }
-
+.prof-ob-reb-5-8{
+    display: flex;
+    flex-direction: column;
+    align-items:start;
+    background-image: url(../public/etiket-corporate.jpg);
+    background-size: cover;
+    background-position:top;
+    gap: 190px;
+    font-size: 18px;
+    color: #000000;
+    font-weight: 600;
+    padding: 11px 16px;
+    border-radius: 15px;
+}
 .prof-ob-reb-5-6 {
     flex: 0 0 100%;
     box-sizing: border-box;
@@ -116,12 +133,16 @@
     border-radius: 16px;
     justify-content: space-between;
     align-items: center;
+    color: #fff;
+    font-weight: 600;
+}
+.prof-ob-reb-kon{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.prof-ob-reb-5-7 {
-    justify-content: space-between;
-    align-items: center;
-}
+
 
 .prof-ob-reb-5-3 {
     justify-content: center;

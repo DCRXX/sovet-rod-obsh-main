@@ -3,15 +3,26 @@
     width: 100%;
     height: auto;
     display: flex;
+    align-items: center;
     flex-direction: column;
     padding: 0 40px 0 40px;
     margin-bottom: 80px;
+    max-width: 2200px;
+}
+.US-body{
+    display: flex;
+    flex-direction: column;
+    gap: 75px;
+    width: 100%;
+    max-width: 2200px;
 }
 .US-head{
     display: flex;
     gap: 50px;
     padding: 50px 0 0 0;
     flex-direction: column;
+    max-width: 100%;
+
 }
 .spis{
     display: flex;
@@ -47,7 +58,7 @@
 .spis-item{
     padding: 10px 24px;
     display: flex;
-    min-width: 315px;
+    min-width: 325px;
     width: fit-content;
     background-color: transparent;
     border: 1px solid #DC3E48;
@@ -236,8 +247,8 @@
     background-color: #fff;
 }
 .GM,
-.Nymber,
-.FIO{
+.surname,
+.name{
     font-size: 18px;
     color: #000000;
     font-weight: 500;
@@ -901,7 +912,6 @@ textarea::placeholder{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px 60px;
 }
 
 .red-plash {

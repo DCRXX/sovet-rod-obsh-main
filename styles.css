@@ -37,6 +37,7 @@ body {
 .main {
   flex: 1 0 auto;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   /* Основной контент растягивается, чтобы занять всё доступное пространство */
 }

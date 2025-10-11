@@ -1,4 +1,4 @@
-@import url(../style/US.css);
+@import url(./US.css);
 
 .ROD{
     width: 100%;
@@ -6,6 +6,7 @@
     display: flex;
     flex-direction: column;
     gap: 75px;
+    align-items: center;
     padding: 0 40px 80px 40px;
 }
 .ROD-content-3{
@@ -20,6 +21,8 @@
     display: flex;
     flex-direction: column;
     gap: 75px;
+    width: 100%;
+    max-width: 2200px;
 }
 .EVO-content-1{
     background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.788)), url(../public/rod-plash.svg) !important;
@@ -196,7 +199,7 @@
     gap: 40px;
     height: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 .raz-video{
     width: 100%;
@@ -221,10 +224,12 @@
     display: flex;
     color: #FFFFFF;
     font-size: 18px;
+    background-color: #DC3E48;
     font-weight: 600;
     flex-direction: column;
     height: auto;
-    padding: 30px 0 0 0;
+    border-radius: 15px;
+    padding: 30px 20px 30px 20px;
 }
 
 .ROD-content-pit-1{
@@ -375,6 +380,9 @@
     flex-direction: column;
     gap: 15px;
 }
+.Rod-body[data-content="cont"] {
+  width: 100%;
+}
 
 @media(max-width: 1630px){
     .cont-1{
@@ -466,12 +474,15 @@
         padding-left: 15px;
     }
 }
-@media(max-width: 530px){
+@media(max-width: 545px){
     .CZ{
         min-width: 100%;
     }
     .OZ{
         min-width: 100%;
+    }
+    .raz-video iFrame{
+        height: 360px;
     }
     .ROD{
         padding: 0 15px 80px 15px;
@@ -486,5 +497,8 @@
 @media(max-width: 400px){
     p{
         font-size: 14px;
+    }
+    .raz-video iFrame{
+        height: 230px;
     }
 }

@@ -6,6 +6,7 @@
     flex-wrap: nowrap;
     gap: 28px;
     padding: 80px 50px;
+    max-width: 2200px;
 }
 
 .red-plash {
