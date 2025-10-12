@@ -125,7 +125,11 @@
 
 .timeline-menu {
     display: flex;
+<<<<<<< HEAD
     justify-content: space-around;
+=======
+    justify-content: space-between;
+>>>>>>> 95dd9bfef3eddebc9177413cb0b9e00029f8ccb9
     overflow-x: auto;
     white-space: nowrap;
     width: 100%;

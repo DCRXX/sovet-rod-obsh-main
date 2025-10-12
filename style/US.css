@@ -1,5 +1,10 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-.US{
+.US {
     width: 100%;
     height: auto;
     display: flex;
@@ -9,14 +14,16 @@
     margin-bottom: 80px;
     max-width: 2200px;
 }
-.US-body{
+
+.US-body {
     display: flex;
     flex-direction: column;
     gap: 75px;
     width: 100%;
     max-width: 2200px;
 }
-.US-head{
+
+.US-head {
     display: flex;
     gap: 50px;
     padding: 50px 0 0 0;
@@ -24,7 +31,8 @@
     max-width: 100%;
 
 }
-.spis{
+
+.spis {
     display: flex;
     gap: 40px;
     justify-content: center;
@@ -39,26 +47,33 @@
     -webkit-overflow-scrolling: touch;
 
 }
-.us-content{
+
+.us-content {
     display: flex;
     padding: 60px 0 60px 0;
     flex-direction: column;
     gap: 25px;
 }
+
 .spis a {
     color: #DC3E48;
 }
-.spis p{
+
+.spis p {
     font-size: 16px;
     font-weight: 600;
     line-height: 160%;
     letter-spacing: -2%;
 }
 
-.spis-item{
+.spis-item {
     padding: 10px 24px;
     display: flex;
+<<<<<<< HEAD
     min-width: 325px;
+=======
+    min-width: 315px;
+>>>>>>> 95dd9bfef3eddebc9177413cb0b9e00029f8ccb9
     width: fit-content;
     background-color: transparent;
     border: 1px solid #DC3E48;
@@ -66,27 +81,33 @@
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
     flex-wrap: nowrap;
 }
+
 .spis-item.active {
     background-color: #DC3E48;
     color: #fff;
     border-color: #DC3E48;
 }
+
 .spis-item.active p {
     color: #fff;
 }
+
 .spis-item:hover:not(.active) {
     background-color: #fff;
     color: #DC3E48;
     border-color: #DC3E48;
 }
+
 .spis-item:hover:not(.active) p {
     color: #DC3E48;
 }
-.Bloc-1{
+
+.Bloc-1 {
     max-height: 335px;
 }
+
 .Bloc-2,
-.Bloc-1{
+.Bloc-1 {
     width: 100%;
     border-radius: 15px;
     height: auto;
@@ -100,29 +121,34 @@
     display: flex;
     justify-content: space-between;
 }
-.Bloc-1 img{
+
+.Bloc-1 img {
     height: 100%;
 }
-.Bloc-1 p{
+
+.Bloc-1 p {
     min-width: 540px;
     padding: 15px 0 15px 0;
     font-size: 24px;
 }
 
-.US-body-2{
+.US-body-2 {
     display: flex;
     gap: 75px;
     flex-direction: column;
 }
-.Bloc-2{
+
+.Bloc-2 {
     padding: 30px 20px 30px 30px;
     flex-direction: column;
 }
-.Bloc-2 li{
+
+.Bloc-2 li {
     font-size: 20px;
     line-height: 2;
 }
-.Kalen{
+
+.Kalen {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -131,22 +157,26 @@
     border-radius: 15px;
     border: 2px solid #DC3E48;
 }
-.mes-g img{
+
+.mes-g img {
     width: 15px;
 }
-.mes-g{
+
+.mes-g {
     border-bottom: 2px solid #DC3E48;
     display: flex;
     font-weight: 600;
 }
-.mes{
+
+.mes {
     width: 50%;
     gap: 5px;
     padding: 5px 10px 5px 0;
     justify-content: right;
     display: flex;
 }
-.g{
+
+.g {
     padding: 5px 0 5px 10px;
     border-left: 2px solid #DC3E48;
     gap: 5px;
@@ -154,12 +184,14 @@
     justify-content: left;
     display: flex;
 }
+
 .n,
-.m{
+.m {
     display: flex;
     gap: 5px;
     cursor: pointer;
 }
+
 .cisl {
     overflow-x: auto;
     overflow-y: hidden;
@@ -190,10 +222,12 @@
     background: #DC3E48;
     color: #fff;
 }
+
 .data.selected .calendar-day {
     color: #fff;
 }
-.tabl{
+
+.tabl {
     width: 100%;
     overflow: hidden;
     border: 2px solid #DC3E48;
@@ -203,7 +237,8 @@
     display: flex;
     flex-direction: column;
 }
-.tab{
+
+.tab {
     min-height: 100px;
     border-bottom: 2px solid #DC3E48;
     align-items: center;
@@ -212,7 +247,8 @@
     font-size: 24px;
     font-weight: 600;
 }
-.form{
+
+.form {
     width: 100%;
     background-color: #DC3E48;
     border-radius: 15px;
@@ -222,19 +258,23 @@
     flex-direction: column;
     height: auto;
 }
-.head{
+
+.head {
     padding: 10px 0 0 0;
     color: white;
 }
-.form-body{
+
+.form-body {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
-.type img{
+
+.type img {
     width: 20px;
 }
-.type{
+
+.type {
     cursor: pointer;
     padding: 10px 10px 10px 10px;
     width: 100%;
@@ -246,9 +286,10 @@
     justify-content: space-between;
     background-color: #fff;
 }
+
 .GM,
 .surname,
-.name{
+.name {
     font-size: 18px;
     color: #000000;
     font-weight: 500;
@@ -259,13 +300,16 @@
     border: none;
     outline: none;
 }
-input::placeholder{
+
+input::placeholder {
     color: #696969;
 }
-textarea::placeholder{
+
+textarea::placeholder {
     color: #696969;
 }
-.OP-Z{
+
+.OP-Z {
     font-size: 18px;
     font-weight: 500;
     resize: none;
@@ -280,10 +324,13 @@ textarea::placeholder{
     border: none;
     outline: none;
 }
-.button-1{
+
+.button-1 {
     width: 100%;
 }
-.nov-1{
+
+.nov-1,
+.nov-1-2 {
     display: flex;
     width: 100%;
     color: #fff;
@@ -294,7 +341,15 @@ textarea::placeholder{
     border-radius: 15px;
     padding: 20px 20px 20px 20px;
 }
-.nov-img{
+
+.nov-1-2 {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.nov-img,
+.nov-img-2 {
     background-color: #9c9c9c;
     width: 40%;
     border-radius: 15px;
@@ -304,24 +359,38 @@ textarea::placeholder{
     justify-content: center;
     font-size: 40px;
 }
-.nov-text p{
+
+.nov-img-2 {
+    width: 20%;
+    height: 250px;
+}
+
+.nov-text p {
     font-size: 16px;
     font-weight: 500;
 }
-.nov-text{
+
+.nov-text,
+.nov-text-2 {
     width: 58%;
     gap: 30px;
     display: flex;
     flex-direction: column;
 }
-.text-head{
+
+.nov-text-2 {
+    gap: 15px;
+}
+
+.text-head {
     display: flex;
     flex-direction: column;
     gap: 15px;
     padding: 20px 0 0 0;
     width: 100%;
 }
-.kont{
+
+.kont {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -331,7 +400,8 @@ textarea::placeholder{
     height: auto;
     gap: 30px;
 }
-.K{
+
+.K {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -339,10 +409,12 @@ textarea::placeholder{
     font-size: 24px;
     font-weight: 600;
 }
-.Icon img{
+
+.Icon img {
     width: 50px;
 }
-.Icon{
+
+.Icon {
     gap: 15px;
     display: flex;
     flex-wrap: wrap;
@@ -351,10 +423,6 @@ textarea::placeholder{
 
 }
 
-
-
-
-/* Выпадающее окно для выбора типа заявки */
 .type-dropdown {
     position: relative;
     width: 100%;
@@ -363,6 +431,7 @@ textarea::placeholder{
     overflow: hidden;
     z-index: 5;
 }
+
 .type-option {
     padding: 10px 12px;
     font-size: 16px;
@@ -371,6 +440,7 @@ textarea::placeholder{
     cursor: pointer;
     transition: background 0.3s ease;
 }
+
 .type-option:hover {
     background: #e2e2e2;
 }
@@ -378,56 +448,56 @@ textarea::placeholder{
 
 /* Модалка выбора месяца/года */
 .modal-select {
-  position: fixed;
-  z-index: 2000;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 .modal-content {
-  background: #fff;
-  border-radius: 14px;
-  padding: 28px 32px;
-  min-width: 220px;
-  max-width: 90vw;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-#modal-month-list, #modal-year-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: center;
-}
-.modal-month-item, .modal-year-item {
-  font-size: 18px;
-  color: #DC3E48;
-  font-weight: 500;
-  padding: 8px 20px;
-  border-radius: 7px;
-  cursor: pointer;
-  background: #f5f5f5;
-  transition: background 0.2s, color 0.2s;
-}
-.modal-month-item.selected, .modal-month-item:hover,
-.modal-year-item.selected, .modal-year-item:hover {
-  background: #DC3E48;
-  color: #fff;
+    background: #fff;
+    border-radius: 14px;
+    padding: 28px 32px;
+    min-width: 220px;
+    max-width: 90vw;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+#modal-month-list,
+#modal-year-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+.modal-month-item,
+.modal-year-item {
+    font-size: 18px;
+    color: #DC3E48;
+    font-weight: 500;
+    padding: 8px 20px;
+    border-radius: 7px;
+    cursor: pointer;
+    background: #f5f5f5;
+    transition: background 0.2s, color 0.2s;
+}
 
-* {
-    margin: 0;
-    padding: 0;
-    font-family: "Montserrat", sans-serif;
-    box-sizing: border-box;
+.modal-month-item.selected,
+.modal-month-item:hover,
+.modal-year-item.selected,
+.modal-year-item:hover {
+    background: #DC3E48;
+    color: #fff;
 }
 
 .docs-copr {
@@ -456,9 +526,9 @@ textarea::placeholder{
 
 .docs-copr-plash {
     width: 100%;
-    background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.788)), url(../public/photo-docs.svg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.788)), url(../public/photo-docs.svg);
     background-size: cover;
-    background-position:20% 70%;
+    background-position: 20% 70%;
     min-height: 400px;
     align-items: end;
     border-radius: 16px;
@@ -538,11 +608,13 @@ textarea::placeholder{
     justify-content: center;
     align-items: center;
 }
-.img-plash{
+
+.img-plash {
     width: 100%;
     height: auto;
 }
-.docs-copr-plash-2{
+
+.docs-copr-plash-2 {
     border-radius: 16px;
 }
 
@@ -552,21 +624,25 @@ textarea::placeholder{
     font-size: 16px;
     font-weight: 600;
 }
+
 @media (max-width: 1620px) {
-    .nov-img{
+    .nov-img {
         width: 100%;
     }
 }
+
 @media (max-width: 1320px) {
-    .Bloc-1{
+    .Bloc-1 {
         max-height: 750px;
         padding: 0 0 0 0;
         gap: 15px;
     }
-    .Bloc-1 img{
+
+    .Bloc-1 img {
         width: 100%;
     }
-    .Bloc-1 p{
+
+    .Bloc-1 p {
         min-width: 100%;
         padding: 10px 15px 0 15px;
     }
@@ -577,7 +653,8 @@ textarea::placeholder{
         padding: 35px 25px;
         gap: 40px;
     }
-    .docs-copr-plash p{
+
+    .docs-copr-plash p {
         font-size: 18px;
     }
 
@@ -630,6 +707,7 @@ textarea::placeholder{
         color: #ffffff;
         font-size: 20px;
     }
+
     .test {
         padding: 40px 50px;
     }
@@ -668,8 +746,9 @@ textarea::placeholder{
         font-size: 14px;
     }
 }
+
 @media (max-width: 900px) {
-    .US{
+    .US {
         padding: 0 20px 0 20px;
     }
 }
@@ -732,6 +811,7 @@ textarea::placeholder{
         color: #ffffff;
         font-size: 16px;
     }
+
     .test {
         padding: 30px 40px;
     }
@@ -771,37 +851,51 @@ textarea::placeholder{
     }
 
 }
+
 @media (max-width: 650px) {
-    .Bloc-1{
+    .Bloc-1 {
         max-height: 850px;
     }
-    .Bloc-2{
+
+    .Bloc-2 {
         gap: 15px;
     }
-    .Bloc-2 li{
+
+    .Bloc-2 li {
         line-height: 1.5;
     }
-    .data{
+
+    .data {
         width: 30%;
     }
-    .spis-item{
+
+    .spis-item {
         min-width: max-content;
         width: auto;
     }
-    .us-content{
+
+    .us-content {
         gap: 45px;
     }
-    .us-content p{
+
+    .us-content p {
         font-size: 14px;
     }
-    .us-content li{
+
+    .us-content li {
         font-size: 18px;
     }
-    .K p{
+
+    .K p {
         font-size: 16px;
     }
-    .us-content h1{
+
+    .us-content h1 {
         font-size: 22px;
+    }
+
+    .US-head {
+        padding: 20px 0 0 0;
     }
 }
 
@@ -863,6 +957,7 @@ textarea::placeholder{
         color: #ffffff;
         font-size: 14px;
     }
+
     .test {
         padding: 20px 30px;
     }
@@ -901,8 +996,9 @@ textarea::placeholder{
         font-size: 10px;
     }
 }
+
 @media (max-width: 400px) {
-    .Bloc-1{
+    .Bloc-1 {
         max-height: 950px;
     }
 }
@@ -995,4 +1091,3 @@ textarea::placeholder{
     color: rgba(255, 255, 255, 1);
     text-decoration: none;
 }
-

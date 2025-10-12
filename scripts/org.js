@@ -41,12 +41,47 @@ document.addEventListener('DOMContentLoaded', function () {
     const spis = document.querySelector('.spis');
     const SPIS_SCROLL_SPEED = 2; // множитель скорости
     if (spis) {
-        spis.addEventListener('wheel', function(e) {
+        spis.addEventListener('wheel', function (e) {
             if (window.innerWidth <= 1526 && e.deltaY !== 0) {
                 e.preventDefault();
                 spis.scrollLeft += e.deltaY * SPIS_SCROLL_SPEED;
             }
         }, { passive: false });
+    }
+});
+
+const planLinks = document.querySelectorAll('.one-plan');
+const modal = document.getElementById('planModal');
+
+// Функция открытия модального окна
+function openModal() {
+    modal.style.display = 'flex';
+}
+
+// Функция закрытия модального окна
+function closeModal() {
+    modal.style.display = 'none';
+}
+
+// Добавляем обработчик клика для каждой ссылки
+planLinks.forEach(link => {
+    link.addEventListener('click', (event) => {
+        event.preventDefault(); // Отменяем стандартное поведение ссылки
+        openModal();
+    });
+});
+
+// Закрытие модального окна при клике вне содержимого
+modal.addEventListener('click', (event) => {
+    if (event.target === modal) {
+        closeModal();
+    }
+});
+
+// Закрытие модального окна при нажатии клавиши Escape
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        closeModal();
     }
 });
 

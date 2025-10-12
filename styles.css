@@ -38,6 +38,5 @@ body {
   flex: 1 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
   /* Основной контент растягивается, чтобы занять всё доступное пространство */
 }

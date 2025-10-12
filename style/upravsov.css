@@ -1,6 +1,18 @@
 @import url(./orbtorg.css);
 
 .glav-2 {
+<<<<<<< HEAD
+    background-image: linear-gradient(rgba(0, 0, 0, 0.295), rgba(0, 0, 0, 0.096)),url(../public/sovet.svg);
+}
+
+.glav-2:nth-child(2) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.295), rgba(0, 0, 0, 0.096)),url(../public/uprav-2.svg);
+    background-position: center;
+}
+
+.glav-2:nth-child(3) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.295), rgba(0, 0, 0, 0.096)),url(../public/uprav-3.svg);
+=======
     background-image: url(../public/sovet.svg);
 }
 
@@ -10,6 +22,7 @@
 
 .glav-2:nth-child(3) {
     background-image: url(../public/sssssskk.svg);
+>>>>>>> 95dd9bfef3eddebc9177413cb0b9e00029f8ccb9
 }
 
 .glav-2:nth-child(4) {

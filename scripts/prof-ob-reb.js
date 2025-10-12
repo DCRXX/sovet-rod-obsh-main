@@ -92,6 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 updateDots();
             };
 
+<<<<<<< HEAD
             // timeline-menu может быть внутри конкретного carousel
             const container = carousel.querySelector('.timeline-menu');
             if (container) {
@@ -108,6 +109,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     container.scrollLeft = scrollPosition;
                 }, { passive: false });
             }
+=======
+            const container = document.querySelector('.timeline-menu');
+            let scrollPosition = 0;
+            const scrollSpeed = 2;
+
+            container.addEventListener('wheel', (event) => {
+                event.preventDefault();
+                scrollPosition += event.deltaY * scrollSpeed;
+                container.scrollLeft = scrollPosition;
+            });
+>>>>>>> 95dd9bfef3eddebc9177413cb0b9e00029f8ccb9
 
             // Синхронизация с ручным скроллом + авто-снап
             let scrollTimer;

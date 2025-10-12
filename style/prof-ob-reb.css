@@ -1,6 +1,12 @@
 @import url(./US.css);
 
 
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .prof-ob-reb-1 {
     width: 100%;
     padding: 45px 50px;
@@ -19,16 +25,12 @@
     width: 100%;
 }
 
-
-
 .prof-text-1 {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
     gap: 10px;
 }
-
-
 
 .prof-ob-reb-3 {
     position: relative;
@@ -38,8 +40,11 @@
     justify-content: center;
     align-items: center;
     gap: 30px;
+<<<<<<< HEAD
     width: 100%;
-    
+=======
+>>>>>>> 95dd9bfef3eddebc9177413cb0b9e00029f8ccb9
+
 }
 
 .carousel-inner {
@@ -61,8 +66,13 @@
     color: rgba(220, 62, 72, 1);
 }
 
+<<<<<<< HEAD
+=======
 /* скрытие полосы прокрутки для WebKit */
-.carousel-inner::-webkit-scrollbar { display: none; }
+>>>>>>> 95dd9bfef3eddebc9177413cb0b9e00029f8ccb9
+.carousel-inner::-webkit-scrollbar {
+    display: none;
+}
 
 .carousel-dots {
     display: flex;
@@ -85,9 +95,15 @@
 .carousel-dot.active {
     background: #DC3E48;
 }
-.prof-ob-reb-5{
+
+.prof-ob-reb-5 {
+<<<<<<< HEAD
+    gap: 10px;
+=======
     gap: 10px !important;
+>>>>>>> 95dd9bfef3eddebc9177413cb0b9e00029f8ccb9
 }
+
 .prof-ob-reb-5,
 .prof-ob-reb-5-3,
 .prof-ob-reb-5-4,
@@ -101,13 +117,14 @@
     padding: 16px;
     border-radius: 16px;
 }
-.prof-ob-reb-5-8{
+
+.prof-ob-reb-5-8 {
     display: flex;
     flex-direction: column;
-    align-items:start;
+    align-items: start;
     background-image: url(../public/etiket-corporate.jpg);
     background-size: cover;
-    background-position:top;
+    background-position: top;
     gap: 190px;
     font-size: 18px;
     color: #000000;
@@ -115,16 +132,19 @@
     padding: 11px 16px;
     border-radius: 15px;
 }
+
 .prof-ob-reb-5-6 {
     flex: 0 0 100%;
     box-sizing: border-box;
     text-align: start;
     scroll-snap-align: start;
 }
-.prof-ob-reb-5-4{
+
+.prof-ob-reb-5-4 {
     flex-direction: row;
 }
-.prof-ob-reb-5-7{
+
+.prof-ob-reb-5-7 {
     width: 100%;
     background-color: #DC3E48;
     display: flex;
@@ -136,7 +156,8 @@
     color: #fff;
     font-weight: 600;
 }
-.prof-ob-reb-kon{
+
+.prof-ob-reb-kon {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -166,7 +187,12 @@
 .prof-text-1 h1,
 .prof-text-1 h2,
 .prof-text-2 p,
-.prof-ob-reb-5-6 h1{
+<<<<<<< HEAD
+.prof-ob-reb-5-6 h1 {
+=======
+.prof-ob-reb-5-6 h1,
+.prof-text-2 {
+>>>>>>> 95dd9bfef3eddebc9177413cb0b9e00029f8ccb9
     font-size: 28px;
     font-weight: 700;
     line-height: 100%;
@@ -183,7 +209,12 @@
 .prof-ob-reb-5 p,
 .prof-ob-reb-5-3,
 .prof-ob-reb-5-4 p,
-.prof-ob-reb-5-6 p{
+<<<<<<< HEAD
+.prof-ob-reb-5-6 p {
+=======
+.prof-ob-reb-5-6 p,
+.prof-ob-reb-8 a {
+>>>>>>> 95dd9bfef3eddebc9177413cb0b9e00029f8ccb9
     color: #fff;
     font-size: 20px;
     font-weight: 600;
@@ -308,6 +339,12 @@
     letter-spacing: -3%;
 }
 
+.prof-ob-reb-8 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
 @media (max-width: 900px) {
 
     .prof-ob-reb-1 {
@@ -328,7 +365,12 @@
     }
 
     .prof-ob-reb-5 h1,
-    .prof-ob-reb-5 h2 {
+    .prof-ob-reb-5 h2,
+    .prof-text-1 h1,
+    .prof-text-1 h2,
+    .prof-text-2 p,
+    .prof-ob-reb-5-6 h1,
+    .prof-text-2 {
         font-size: 25px;
     }
 
@@ -369,6 +411,14 @@
     .glav-text {
         font-size: 26px;
     }
+
+    .prof-ob-reb-5-4 {
+        flex-direction: column;
+    }
+
+    .prof-text-2 p {
+        font-size: 22px;
+    }
 }
 
 @media (max-width: 650px) {
@@ -389,7 +439,10 @@
 
     .prof-ob-reb-6,
     .prof-ob-reb-5 p,
-    .prof-ob-reb-5-3 {
+    .prof-ob-reb-5-3,
+    .prof-ob-reb-5-4 p,
+    .prof-ob-reb-5-6 p,
+    .prof-ob-reb-8 a {
         font-size: 17px;
     }
 
@@ -402,8 +455,9 @@
         font-size: 24px;
     }
 }
-@media (max-width: 530px){
-    .video-prof{
+
+@media (max-width: 530px) {
+    .video-prof {
         min-width: 100%;
     }
 }
@@ -429,11 +483,17 @@
     }
 
     .prof-ob-reb-5 h1,
-    .prof-ob-reb-5 h2 {
+    .prof-ob-reb-5 h2,
+    .prof-text-1 h1,
+    .prof-text-1 h2,
+    .prof-text-2 p,
+    .prof-ob-reb-5-6 h1,
+    .prof-text-2 {
         font-size: 20px;
     }
 
-    .prof-ob-reb-5 h2 {
+    .prof-ob-reb-5 h2,
+    .prof-text-1 h2 {
         font-size: 18px;
     }
 
